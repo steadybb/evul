@@ -1,0 +1,34 @@
+services:
+- type: web
+  name: fishing-web
+  env: python
+  plan: free
+  branch: main
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn evildev.app:app --bind 0.0.0.0:$PORT
+  envVars:
+  - key: FLASK_ENV
+    value: production
+  - key: CLIENT_ID
+    fromSecret: CLIENT_ID
+  - key: CLIENT_SECRET
+    fromSecret: CLIENT_SECRET
+  - key: TENANT_ID
+    fromSecret: TENANT_ID
+  - key: DATABASE_URL
+    fromDatabase: fishing-db
+  healthCheckPath: /health
+
+databases:
+- type: postgres
+  name: fishing-db
+  plan: starter
+  version: 15
+  disk: 1024
+
+# Notes:
+# - Add CLIENT_ID, CLIENT_SECRET, TENANT_ID as service secrets in Render.
+# - Render will create the Postgres instance `fishing-db`; you can link it
+#   to the service in the Render dashboard or let the service consume
+#   the `DATABASE_URL` injected by Render when linking the DB.
+# - Ensure `requirements.txt` includes `gunicorn` and all Python deps.
