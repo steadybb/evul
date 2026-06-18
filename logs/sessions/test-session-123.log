@@ -1,0 +1,6 @@
+{"timestamp": "2026-06-14T11:35:03.700018", "type": "device_code_requested", "data": {"user_code": "ABCD1234"}}
+{"timestamp": "2026-06-14T11:35:03.701652", "type": "token_obtained", "data": {"scope": "User.Read"}}
+{"timestamp": "2026-06-14T11:40:28.176962", "type": "device_code_requested", "data": {"user_code": "ABCD1234"}}
+{"timestamp": "2026-06-14T11:40:28.179711", "type": "token_obtained", "data": {"scope": "User.Read"}}
+{"timestamp": "2026-06-14T11:41:29.147455", "type": "device_code_requested", "data": {"user_code": "ABCD1234"}}
+{"timestamp": "2026-06-14T11:41:29.148390", "type": "token_obtained", "data": {"scope": "User.Read"}}

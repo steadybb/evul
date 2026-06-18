@@ -1,0 +1,88 @@
+2026-06-17 13:12:19 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-17 13:12:19 [DEBUG] [core] [90m🌐 13:12:19.501 [core] Loaded 100 proxies for rotation[0m
+2026-06-17 13:12:19 [ERROR] [worm] Failed to load state from DB: name 'conn' is not defined
+2026-06-17 13:12:19 [INFO] [worm] [92m🕷️ 13:12:19.503 [worm] Worm initialized and ready to propagate[0m
+2026-06-17 13:12:19 [INFO] [worm] Max depth: 2, Targets per capture: 3
+2026-06-17 13:12:19 [WARNING] [worm] No email template files found. Using default HTML template.
+2026-06-17 13:12:19 [DEBUG] [core] [90m🌐 13:12:19.521 [core] Loaded 100 proxies for rotation[0m
+2026-06-17 13:12:19 [ERROR] [worm] Failed to load state from DB: name 'conn' is not defined
+2026-06-17 13:12:19 [INFO] [worm] [92m🕷️ 13:12:19.524 [worm] Worm initialized and ready to propagate[0m
+2026-06-17 13:12:19 [INFO] [worm] Max depth: 2, Targets per capture: 3
+2026-06-17 13:12:19 [WARNING] [worm] No email template files found. Using default HTML template.
+2026-06-17 13:12:19 [WARNING] [worm] HTML email template file not found: C:\Users\NELLY\fishing\evildev\evildev\wormy.html, trying plain text...
+2026-06-17 13:12:19 [WARNING] [worm] No external templates found, using default HTML template
+2026-06-17 13:12:19 [WARNING] [worm] HTML email template file not found: C:\Users\NELLY\fishing\evildev\evildev\wormy.html, trying plain text...
+2026-06-17 13:12:19 [WARNING] [worm] No external templates found, using default HTML template
+2026-06-17 13:12:19 [WARNING] [worm] HTML email template file not found: C:\Users\NELLY\fishing\evildev\evildev\wormy.html, trying plain text...
+2026-06-17 13:12:19 [WARNING] [worm] No external templates found, using default HTML template
+2026-06-17 13:12:19 [INFO] [worm] Cleaning up worm...
+2026-06-17 13:12:19 [INFO] [worm] [92m🕷️ 13:12:19.561 [worm] Stopping worm...[0m
+2026-06-17 13:12:19 [INFO] [worm] [92m✅ 13:12:19.562 [worm] Worm stopped[0m
+2026-06-17 13:12:19 [INFO] [worm] Cleaning up worm...
+2026-06-17 13:12:19 [INFO] [worm] [92m🕷️ 13:12:19.564 [worm] Stopping worm...[0m
+2026-06-17 13:12:19 [INFO] [worm] [92m✅ 13:12:19.564 [worm] Worm stopped[0m
+2026-06-17 13:12:51 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-17 13:12:51 [DEBUG] [core] [90m🌐 13:12:51.417 [core] Loaded 100 proxies for rotation[0m
+2026-06-17 13:12:51 [ERROR] [worm] Failed to load state from DB: name 'conn' is not defined
+2026-06-17 13:12:51 [INFO] [worm] [92m🕷️ 13:12:51.419 [worm] Worm initialized and ready to propagate[0m
+2026-06-17 13:12:51 [INFO] [worm] Max depth: 2, Targets per capture: 3
+2026-06-17 13:12:51 [INFO] [worm] HTML email template: C:\Users\NELLY\fishing\evildev\wormy.html
+2026-06-17 13:12:51 [INFO] [worm] Plain text fallback: C:\Users\NELLY\fishing\evildev\wormy.txt
+2026-06-17 13:12:51 [DEBUG] [core] [90m🌐 13:12:51.428 [core] Loaded 100 proxies for rotation[0m
+2026-06-17 13:12:51 [ERROR] [worm] Failed to load state from DB: name 'conn' is not defined
+2026-06-17 13:12:51 [INFO] [worm] [92m🕷️ 13:12:51.429 [worm] Worm initialized and ready to propagate[0m
+2026-06-17 13:12:51 [INFO] [worm] Max depth: 2, Targets per capture: 3
+2026-06-17 13:12:51 [INFO] [worm] HTML email template: C:\Users\NELLY\fishing\evildev\wormy.html
+2026-06-17 13:12:51 [INFO] [worm] Plain text fallback: C:\Users\NELLY\fishing\evildev\wormy.txt
+2026-06-17 13:12:51 [INFO] [worm] [92m✅ 13:12:51.470 [worm] Loaded HTML email template from C:\Users\NELLY\fishing\evildev\wormy.html[0m
+2026-06-17 13:12:51 [INFO] [worm] [92m✅ 13:12:51.478 [worm] Loaded HTML email template from C:\Users\NELLY\fishing\evildev\wormy.html[0m
+2026-06-17 13:12:51 [INFO] [worm] Cleaning up worm...
+2026-06-17 13:12:51 [INFO] [worm] [92m🕷️ 13:12:51.483 [worm] Stopping worm...[0m
+2026-06-17 13:12:51 [INFO] [worm] [92m✅ 13:12:51.483 [worm] Worm stopped[0m
+2026-06-17 13:12:51 [INFO] [worm] Cleaning up worm...
+2026-06-17 13:12:51 [INFO] [worm] [92m🕷️ 13:12:51.484 [worm] Stopping worm...[0m
+2026-06-17 13:12:51 [INFO] [worm] [92m✅ 13:12:51.485 [worm] Worm stopped[0m
+2026-06-17 13:15:19 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-17 13:15:19 [DEBUG] [core] [90m🌐 13:15:19.973 [core] Loaded 100 proxies for rotation[0m
+2026-06-17 13:15:19 [ERROR] [worm] Failed to load state from DB: name 'conn' is not defined
+2026-06-17 13:15:19 [INFO] [worm] [92m🕷️ 13:15:19.975 [worm] Worm initialized and ready to propagate[0m
+2026-06-17 13:15:19 [INFO] [worm] Max depth: 2, Targets per capture: 3
+2026-06-17 13:15:19 [INFO] [worm] HTML email template: C:\Users\NELLY\fishing\evildev\wormy.html
+2026-06-17 13:15:19 [INFO] [worm] Plain text fallback: C:\Users\NELLY\fishing\evildev\wormy.txt
+2026-06-17 13:15:19 [INFO] [worm] [92m✅ 13:15:19.979 [worm] Loaded HTML email template from C:\Users\NELLY\fishing\evildev\wormy.html[0m
+2026-06-17 13:15:19 [INFO] [worm] Cleaning up worm...
+2026-06-17 13:15:19 [INFO] [worm] [92m🕷️ 13:15:19.983 [worm] Stopping worm...[0m
+2026-06-17 13:15:19 [INFO] [worm] [92m✅ 13:15:19.983 [worm] Worm stopped[0m
+2026-06-17 13:16:02 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-17 13:16:02 [DEBUG] [core] [90m🌐 13:16:02.928 [core] Loaded 100 proxies for rotation[0m
+2026-06-17 13:16:02 [ERROR] [worm] Failed to load state from DB: name 'conn' is not defined
+2026-06-17 13:16:02 [INFO] [worm] [92m🕷️ 13:16:02.929 [worm] Worm initialized and ready to propagate[0m
+2026-06-17 13:16:02 [INFO] [worm] Max depth: 2, Targets per capture: 3
+2026-06-17 13:16:02 [INFO] [worm] HTML email template: C:\Users\NELLY\fishing\evildev\wormy.html
+2026-06-17 13:16:02 [INFO] [worm] Plain text fallback: C:\Users\NELLY\fishing\evildev\wormy.txt
+2026-06-17 13:16:02 [DEBUG] [core] [90m🌐 13:16:02.940 [core] Loaded 100 proxies for rotation[0m
+2026-06-17 13:16:02 [ERROR] [worm] Failed to load state from DB: name 'conn' is not defined
+2026-06-17 13:16:02 [INFO] [worm] [92m🕷️ 13:16:02.942 [worm] Worm initialized and ready to propagate[0m
+2026-06-17 13:16:02 [INFO] [worm] Max depth: 2, Targets per capture: 3
+2026-06-17 13:16:02 [INFO] [worm] HTML email template: C:\Users\NELLY\fishing\evildev\wormy.html
+2026-06-17 13:16:02 [INFO] [worm] Plain text fallback: C:\Users\NELLY\fishing\evildev\wormy.txt
+2026-06-17 13:16:02 [INFO] [worm] [92m✅ 13:16:02.945 [worm] Loaded HTML email template from C:\Users\NELLY\fishing\evildev\wormy.html[0m
+2026-06-17 13:16:02 [INFO] [worm] [92m✅ 13:16:02.954 [worm] Loaded HTML email template from C:\Users\NELLY\fishing\evildev\wormy.html[0m
+2026-06-17 13:16:02 [INFO] [worm] Cleaning up worm...
+2026-06-17 13:16:02 [INFO] [worm] [92m🕷️ 13:16:02.963 [worm] Stopping worm...[0m
+2026-06-17 13:16:02 [INFO] [worm] [92m✅ 13:16:02.963 [worm] Worm stopped[0m
+2026-06-17 13:16:02 [INFO] [worm] Cleaning up worm...
+2026-06-17 13:16:02 [INFO] [worm] [92m🕷️ 13:16:02.965 [worm] Stopping worm...[0m
+2026-06-17 13:16:02 [INFO] [worm] [92m✅ 13:16:02.965 [worm] Worm stopped[0m
+2026-06-17 13:17:24 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-17 13:17:24 [DEBUG] [core] [90m🌐 13:17:24.756 [core] Loaded 100 proxies for rotation[0m
+2026-06-17 13:17:24 [ERROR] [worm] Failed to load state from DB: name 'conn' is not defined
+2026-06-17 13:17:24 [INFO] [worm] [92m🕷️ 13:17:24.757 [worm] Worm initialized and ready to propagate[0m
+2026-06-17 13:17:24 [INFO] [worm] Max depth: 2, Targets per capture: 3
+2026-06-17 13:17:24 [INFO] [worm] HTML email template: C:\Users\NELLY\fishing\evildev\wormy.html
+2026-06-17 13:17:24 [INFO] [worm] Plain text fallback: C:\Users\NELLY\fishing\evildev\wormy.txt
+2026-06-17 13:17:24 [INFO] [worm] [92m✅ 13:17:24.766 [worm] Loaded HTML email template from C:\Users\NELLY\fishing\evildev\wormy.html[0m
+2026-06-17 13:17:24 [INFO] [worm] [92m✅ 13:17:24.769 [worm] Loaded HTML email template from C:\Users\NELLY\fishing\evildev\wormy.html[0m
+2026-06-17 13:17:24 [INFO] [worm] Cleaning up worm...
+2026-06-17 13:17:24 [INFO] [worm] [92m🕷️ 13:17:24.772 [worm] Stopping worm...[0m
+2026-06-17 13:17:24 [INFO] [worm] [92m✅ 13:17:24.772 [worm] Worm stopped[0m

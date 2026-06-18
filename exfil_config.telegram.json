@@ -1,0 +1,14 @@
+{
+  "max_failures_per_channel": 3,
+  "parallel": false,
+  "channels": [
+    {
+      "type": "telegram",
+      "bot_token": "${TELEGRAM_BOT_TOKEN}",
+      "chat_id": "${TELEGRAM_CHAT_ID}",
+      "timeout": 30,
+      "compress": true,
+      "skip_proxy": true
+    }
+  ]
+}

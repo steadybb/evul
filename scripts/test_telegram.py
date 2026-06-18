@@ -1,0 +1,26 @@
+import requests
+
+def read_env(key, path='.env'):
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            for line in f:
+                if line.strip().startswith(key + '='):
+                    return line.strip().split('=',1)[1]
+    except Exception:
+        return None
+
+if __name__ == '__main__':
+    token = read_env('TELEGRAM_BOT_TOKEN')
+    chat = read_env('TELEGRAM_CHAT_ID')
+    print('token:', (token[:8] + '...') if token else None)
+    print('chat:', chat)
+    if not token:
+        print('No token')
+    else:
+        url = f'https://api.telegram.org/bot{token}/getMe'
+        try:
+            r = requests.get(url, timeout=10)
+            print('status', r.status_code)
+            print('body', r.text[:1000])
+        except Exception as e:
+            print('error', e)

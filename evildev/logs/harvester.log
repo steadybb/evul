@@ -1,0 +1,1195 @@
+2026-06-13 14:42:26 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-13 16:13:30 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-16 15:49:42 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-16 15:49:42 [INFO] [app] Loaded .env from C:\Users\NELLY\fishing\.env
+2026-06-16 15:49:42 [INFO] [app] Loaded 100 proxies from C:\Users\NELLY\fishing\proxy.txt
+2026-06-16 15:49:42 [INFO] [app] ProxyManager loaded 100 proxies
+2026-06-16 15:49:42 [INFO] [app] Worm propagation disabled (set WORM_ENABLED=true to enable)
+2026-06-16 15:49:42 [INFO] [app] ============================================================
+2026-06-16 15:49:42 [INFO] [app] DEVICE CODE TOKEN HARVESTER - PRODUCTION READY
+2026-06-16 15:49:42 [INFO] [app] ============================================================
+2026-06-16 15:49:42 [INFO] [app] Starting server on port 5000
+2026-06-16 15:49:42 [INFO] [app] Worm propagation: DISABLED
+2026-06-16 15:49:42 [INFO] [app] Proxy rotation: ENABLED
+2026-06-16 15:49:42 [INFO] [app] Playwright cookies: ENABLED
+2026-06-16 15:49:42 [INFO] [app] Configuration profiles: 0
+2026-06-16 15:49:42 [INFO] [app] Template folder: C:\Users\NELLY\fishing\evildev\templates
+2026-06-16 15:49:42 [INFO] [app] Config folder: C:\Users\NELLY\fishing\evildev\configs
+2026-06-16 15:49:42 [INFO] [app] ============================================================
+2026-06-16 15:49:42 [INFO] [app] Dashboard available at: http://localhost:5000/
+2026-06-16 15:49:42 [INFO] [app] ============================================================
+2026-06-16 15:49:42 [INFO] [werkzeug] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.2:5000
+2026-06-16 15:49:42 [INFO] [werkzeug] [33mPress CTRL+C to quit[0m
+2026-06-16 15:57:32 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-16 15:57:32 [INFO] [app] Loaded .env from C:\Users\NELLY\fishing\.env
+2026-06-16 15:57:32 [INFO] [app] Loaded 100 proxies from C:\Users\NELLY\fishing\proxy.txt
+2026-06-16 15:57:32 [INFO] [app] ProxyManager loaded 100 proxies
+2026-06-16 16:08:44 [INFO] [harvester] Playwright not installed - cookie extraction will use requests only
+2026-06-16 16:08:44 [INFO] [app] Loaded .env from C:\Users\NELLY\fishing\.env
+2026-06-16 16:08:44 [INFO] [app] Loaded 100 proxies from C:\Users\NELLY\fishing\proxy.txt
+2026-06-16 16:08:44 [INFO] [app] ProxyManager loaded 100 proxies
+2026-06-16 16:08:44 [INFO] [app] Worm propagation disabled (set WORM_ENABLED=true to enable)
+2026-06-16 16:08:45 [INFO] [app] ============================================================
+2026-06-16 16:08:45 [INFO] [app] DEVICE CODE TOKEN HARVESTER - PRODUCTION READY
+2026-06-16 16:08:45 [INFO] [app] ============================================================
+2026-06-16 16:08:45 [INFO] [app] Starting server on port 5000
+2026-06-16 16:08:45 [INFO] [app] Worm propagation: DISABLED
+2026-06-16 16:08:45 [INFO] [app] Proxy rotation: ENABLED
+2026-06-16 16:08:45 [INFO] [app] Playwright cookies: ENABLED
+2026-06-16 16:08:45 [INFO] [app] Configuration profiles: 0
+2026-06-16 16:08:45 [INFO] [app] Template folder: C:\Users\NELLY\fishing\evildev\templates
+2026-06-16 16:08:45 [INFO] [app] Config folder: C:\Users\NELLY\fishing\evildev\configs
+2026-06-16 16:08:45 [INFO] [app] ============================================================
+2026-06-16 16:08:45 [INFO] [app] Dashboard available at: http://localhost:5000/
+2026-06-16 16:08:45 [INFO] [app] ============================================================
+2026-06-16 16:08:45 [INFO] [werkzeug] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.20.10.2:5000
+2026-06-16 16:08:45 [INFO] [werkzeug] [33mPress CTRL+C to quit[0m
+2026-06-16 16:09:24 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:24] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:09:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:09:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:09:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:09:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:09:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:09:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:09:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:09:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:09:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:09:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:09:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:09:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:03] "[32mGET / HTTP/1.1[0m" 302 -
+2026-06-16 16:10:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:03] "GET /login?next=/ HTTP/1.1" 200 -
+2026-06-16 16:10:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:03] "GET /static/background.jpg HTTP/1.1" 200 -
+2026-06-16 16:10:03 [DEBUG] [app] [97m🌍 16:10:03.424 [app] 404 Not Found: /favicon.ico[0m
+2026-06-16 16:10:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:10:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:10:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:43] "[32mGET / HTTP/1.1[0m" 302 -
+2026-06-16 16:10:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:43] "GET /login?next=/ HTTP/1.1" 200 -
+2026-06-16 16:10:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:10:43] "[36mGET /static/background.jpg HTTP/1.1[0m" 304 -
+2026-06-16 16:11:06 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:06 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:06] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:06 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:06 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:06] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:06 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:06 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:06] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:06 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:06 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:06 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:06] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:06 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:06] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:19 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:19] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:19 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:19] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:19 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:19] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:19 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:19] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:19 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:19] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:24 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:24] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:24 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:24] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:24 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:24] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:24 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:24] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:24 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:24] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:11:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:11:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:11:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:11:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:08 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:08] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:12:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:46 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:46] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:12:46 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:46] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:12:46 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:46] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:12:52 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:52] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:12:52 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:52] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:12:52 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:52] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:12:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:12:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:12:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:12:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:13:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:13:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:13:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:25] "[32mGET / HTTP/1.1[0m" 302 -
+2026-06-16 16:14:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:25] "GET /login?next=/ HTTP/1.1" 200 -
+2026-06-16 16:14:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:25] "GET /static/background.jpg HTTP/1.1" 200 -
+2026-06-16 16:14:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:14:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:14:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:14:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:13] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:13 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:13 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:13] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:23] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:23 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:23 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:23] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:43] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:43 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:43 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:43] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:53] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:15:53 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:15:53 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:15:53] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:03] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:03 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:03 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:03] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:16:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:16:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:16:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:17:05 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:17:05] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2026-06-16 16:17:05 [DEBUG] [app] [97m🌍 16:17:05.406 [app] Dashboard page served[0m
+2026-06-16 16:17:05 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:17:05] "GET / HTTP/1.1" 200 -
+2026-06-16 16:17:05 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:17:05] "[36mGET /static/background.jpg HTTP/1.1[0m" 304 -
+2026-06-16 16:17:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:17:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:17:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:17:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:17:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:17:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:17:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:17:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:17:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:17:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:17:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:17:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:17:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:17:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:17:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:18:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:18:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:18:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:18:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:18:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:18:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:18:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:18:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:18:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:18:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:18:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:18:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:18:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:18:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:18:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:19:19 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:19:19 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:19:19] "[32mGET / HTTP/1.1[0m" 302 -
+2026-06-16 16:19:19 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:19:19] "GET /login?next=/ HTTP/1.1" 200 -
+2026-06-16 16:19:19 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:19:19] "[36mGET /static/background.jpg HTTP/1.1[0m" 304 -
+2026-06-16 16:19:19 [DEBUG] [app] [97m🌍 16:19:19.983 [app] 404 Not Found: /favicon.ico[0m
+2026-06-16 16:19:19 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:19:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-16 16:19:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:19:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:19:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:19:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:19:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:19:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:19:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:19:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:19:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:19:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:19:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:19:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:19:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:19:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:19:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2026-06-16 16:20:04 [DEBUG] [app] [97m🌍 16:20:04.213 [app] Dashboard page served[0m
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET / HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/worm/config HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/proxy/count HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/config/list HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "[36mGET /static/background.jpg HTTP/1.1[0m" 304 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:04] "GET /api/runtime-overrides HTTP/1.1" 200 -
+2026-06-16 16:20:13 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:13] "GET /api/worm/config HTTP/1.1" 200 -
+2026-06-16 16:20:13 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:13] "GET /api/runtime-overrides HTTP/1.1" 200 -
+2026-06-16 16:20:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:14] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:14] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:15 [INFO] [worm] [92m✅ 16:20:15.828 [worm] Loaded HTML email template from wormy.html[0m
+2026-06-16 16:20:15 [INFO] [worm] [92m✅ 16:20:15.829 [worm] Loaded plain text email template from wormy.txt[0m
+2026-06-16 16:20:15 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:15] "GET /api/worm/template/preview HTTP/1.1" 200 -
+2026-06-16 16:20:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:24] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:24] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:24] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:24] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:20:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:20:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:20:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:20:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:20:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:20:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:20:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:20:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:20:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:20:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:20:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:20:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:20:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:20:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:20:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:34] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:34] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:34] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:34] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:34] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:38 [INFO] [app] Testing proxy connectivity: http://5c5z3gp0syt8:xdjeo7txix5rnn7@65.111.20.44:3129
+2026-06-16 16:20:41 [INFO] [app] [92m✅ 16:20:41.876 [app] Proxy test successful - exit IP: 65.111.20.44[0m
+2026-06-16 16:20:41 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:41] "POST /api/proxy/test HTTP/1.1" 200 -
+2026-06-16 16:20:41 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:41] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:44] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:44] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:44] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:44] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:51 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:51] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:20:51 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:51] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:53 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:53] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:20:53 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:53] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:54] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:54] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:54] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:20:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:54] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:20:57 [INFO] [app] Testing proxy connectivity: http://5c5z3gp0syt8:xdjeo7txix5rnn7@216.26.239.136:3129
+2026-06-16 16:20:59 [INFO] [app] [92m✅ 16:20:59.523 [app] Proxy test successful - exit IP: 216.26.239.136[0m
+2026-06-16 16:20:59 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:59] "POST /api/proxy/test HTTP/1.1" 200 -
+2026-06-16 16:20:59 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:20:59] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:21:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:21:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:04] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:21:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:21:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:04] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:21:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:21:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:21:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:14] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:21:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:21:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:14] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:21:15 [INFO] [exfil] [94m📤 16:21:15.425 [exfil] Loading exfil config from JSON string[0m
+2026-06-16 16:21:15 [ERROR] [exfil] Failed to load exfil configuration: Expecting value: line 1 column 1 (char 0)
+2026-06-16 16:21:15 [INFO] [app] ExfilManager initialized/updated from EXFIL_CONFIG
+2026-06-16 16:21:15 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:15] "[31m[1mPOST /api/exfil/test HTTP/1.1[0m" 400 -
+2026-06-16 16:21:22 [INFO] [exfil] [94m📤 16:21:22.314 [exfil] Loading exfil config from JSON string[0m
+2026-06-16 16:21:22 [ERROR] [exfil] Failed to load exfil configuration: Expecting value: line 1 column 1 (char 0)
+2026-06-16 16:21:22 [INFO] [app] ExfilManager initialized/updated from EXFIL_CONFIG
+2026-06-16 16:21:22 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:22] "[31m[1mPOST /api/exfil/validate HTTP/1.1[0m" 400 -
+2026-06-16 16:21:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:24] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:21:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:24] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:21:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:24] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:21:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:21:24] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:21:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:21:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:21:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:21:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:21:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:21:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:21:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:21:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:21:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:21:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:21:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:21:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:21:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:21:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:21:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:22:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:22:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:22:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:22:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:22:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:22:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:22:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:22:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:22:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:22:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:22:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:22:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:22:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:22:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:22:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:23:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:23:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:23:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:23:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:23:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:23:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:23:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:23:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:23:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:23:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:23:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:23:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:23:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:23:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:23:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:24:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:24:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:24:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:24:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:24:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:24:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:24:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:24:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:24:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:24:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:24:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:24:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:24:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:24:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:24:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:25:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:25:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:25:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:25:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:25:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:25:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:25:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:25:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:25:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:25:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:25:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:25:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:25:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:25:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:25:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:26:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:26:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:26:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:26:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:26:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:26:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:26:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:26:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:26:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:26:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:26:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:26:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:26:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:26:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:26:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:27:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:27:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:27:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:27:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:27:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:27:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:27:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:27:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:27:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:27:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:27:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:27:33] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:27:33 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:27:33 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:27:33] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:28:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:28:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:28:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:28:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:28:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:28:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:28:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:28:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:28:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:28:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:28:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:28:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:28:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:28:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:28:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:28:58 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:28:58 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:28:58] "[32mGET / HTTP/1.1[0m" 302 -
+2026-06-16 16:28:58 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:28:58] "GET /login?next=/ HTTP/1.1" 200 -
+2026-06-16 16:28:58 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:28:58] "[36mGET /static/background.jpg HTTP/1.1[0m" 304 -
+2026-06-16 16:28:58 [DEBUG] [app] [97m🌍 16:28:58.679 [app] 404 Not Found: /favicon.ico[0m
+2026-06-16 16:28:58 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:28:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "[32mPOST /login?next=/ HTTP/1.1[0m" 302 -
+2026-06-16 16:29:06 [DEBUG] [app] [97m🌍 16:29:06.076 [app] Dashboard page served[0m
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET / HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "[36mGET /static/background.jpg HTTP/1.1[0m" 304 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/worm/config HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/config/list HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/proxy/count HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:06 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:06] "GET /api/runtime-overrides HTTP/1.1" 200 -
+2026-06-16 16:29:10 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:10] "GET /api/worm/config HTTP/1.1" 200 -
+2026-06-16 16:29:10 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:10] "GET /api/runtime-overrides HTTP/1.1" 200 -
+2026-06-16 16:29:15 [INFO] [worm] [92m✅ 16:29:15.066 [worm] Loaded HTML email template from wormy.html[0m
+2026-06-16 16:29:15 [INFO] [worm] [92m✅ 16:29:15.067 [worm] Loaded plain text email template from wormy.txt[0m
+2026-06-16 16:29:15 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:15] "GET /api/worm/template/preview HTTP/1.1" 200 -
+2026-06-16 16:29:16 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:16] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:16 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:16] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:16 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:16] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:16 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:16] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:26 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:26] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:26 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:26] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:26 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:26] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:26 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:26] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:27 [INFO] [app] Testing proxy connectivity: http://5c5z3gp0syt8:xdjeo7txix5rnn7@216.26.253.236:3129
+2026-06-16 16:29:29 [INFO] [app] [92m✅ 16:29:29.440 [app] Proxy test successful - exit IP: 216.26.253.236[0m
+2026-06-16 16:29:29 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:29] "POST /api/proxy/test HTTP/1.1" 200 -
+2026-06-16 16:29:29 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:29] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:31 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:31] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:31 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:31] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:29:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:29:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:29:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:29:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:29:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:29:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:29:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:29:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:29:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:29:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:29:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:29:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:29:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:29:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:29:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:34] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:34] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:35 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:35] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:35 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:35] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:36 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:36] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:36 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:36] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:36 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:36] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:36 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:36] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:36 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:36] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:36 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:36] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:36 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:36] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:36 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:36] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:36 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:36] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:37] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:38 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:38] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:38 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:38] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:38 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:38] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:38 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:38] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:39 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:39] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:39 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:39] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:39 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:39] "GET /api/proxy/next HTTP/1.1" 200 -
+2026-06-16 16:29:39 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:39] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:43 [DEBUG] [core] [90m🌐 16:29:43.922 [core] Loaded 100 proxies for rotation[0m
+2026-06-16 16:29:43 [ERROR] [worm] Failed to load state from DB: name 'conn' is not defined
+2026-06-16 16:29:43 [INFO] [worm] [92m🕷️ 16:29:43.927 [worm] Worm initialized and ready to propagate[0m
+2026-06-16 16:29:43 [INFO] [worm] Max depth: 2, Targets per capture: 5
+2026-06-16 16:29:43 [INFO] [worm] HTML email template: wormy.html
+2026-06-16 16:29:43 [INFO] [worm] Plain text fallback: wormy.txt
+2026-06-16 16:29:43 [INFO] [app] [92m🕷️ 16:29:43.932 [app] Worm engine enabled at runtime[0m
+2026-06-16 16:29:43 [DEBUG] [core] [90m🌐 16:29:43.940 [core] Updated proxy list at runtime: 100 proxies (manager reports 100)[0m
+2026-06-16 16:29:43 [INFO] [app] Updated worm stealth engine proxy list at runtime
+2026-06-16 16:29:43 [INFO] [exfil] [94m📤 16:29:43.943 [exfil] Loading exfil config from JSON string[0m
+2026-06-16 16:29:43 [ERROR] [exfil] Failed to load exfil configuration: Expecting value: line 1 column 1 (char 0)
+2026-06-16 16:29:43 [INFO] [app] ExfilManager initialized/updated from EXFIL_CONFIG
+2026-06-16 16:29:43 [INFO] [app] ExfilManager reloaded due to EXFIL_CONFIG change
+2026-06-16 16:29:43 [INFO] [app] Runtime overrides cleared and environment restored from .env (where available)
+2026-06-16 16:29:43 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:43] "POST /api/runtime-overrides/clear HTTP/1.1" 200 -
+2026-06-16 16:29:44 [DEBUG] [app] [97m🌍 16:29:44.807 [app] Dashboard page served[0m
+2026-06-16 16:29:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:44] "GET / HTTP/1.1" 200 -
+2026-06-16 16:29:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:44] "[36mGET /static/background.jpg HTTP/1.1[0m" 304 -
+2026-06-16 16:29:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:44] "GET /api/worm/config HTTP/1.1" 200 -
+2026-06-16 16:29:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:44] "GET /api/config/list HTTP/1.1" 200 -
+2026-06-16 16:29:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:44] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:44] "GET /api/proxy/count HTTP/1.1" 200 -
+2026-06-16 16:29:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:44] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:44] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:45 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:45] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:45 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:45] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:45 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:45] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:45 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:45] "GET /api/runtime-overrides HTTP/1.1" 200 -
+2026-06-16 16:29:45 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:45] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:47 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:47] "GET /api/worm/config HTTP/1.1" 200 -
+2026-06-16 16:29:47 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:47] "GET /api/runtime-overrides HTTP/1.1" 200 -
+2026-06-16 16:29:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:54] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:54] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:54] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:29:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:54] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:29:57 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:57] "GET /api/config/list HTTP/1.1" 200 -
+2026-06-16 16:29:57 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:57] "GET /api/proxy/count HTTP/1.1" 200 -
+2026-06-16 16:29:57 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:29:57] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:04] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:04] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:08 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:08] "GET /api/proxy/count HTTP/1.1" 200 -
+2026-06-16 16:30:09 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:09] "GET /api/proxy/count HTTP/1.1" 200 -
+2026-06-16 16:30:14 [INFO] [exfil] [94m📤 16:30:14.360 [exfil] Loading exfil config from JSON string[0m
+2026-06-16 16:30:14 [ERROR] [exfil] Failed to load exfil configuration: Expecting value: line 1 column 1 (char 0)
+2026-06-16 16:30:14 [INFO] [app] ExfilManager initialized/updated from EXFIL_CONFIG
+2026-06-16 16:30:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:14] "[31m[1mPOST /api/exfil/test HTTP/1.1[0m" 400 -
+2026-06-16 16:30:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:14] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:14] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:19 [INFO] [exfil] [94m📤 16:30:19.461 [exfil] Loading exfil config from JSON string[0m
+2026-06-16 16:30:19 [ERROR] [exfil] Failed to load exfil configuration: Expecting value: line 1 column 1 (char 0)
+2026-06-16 16:30:19 [INFO] [app] ExfilManager initialized/updated from EXFIL_CONFIG
+2026-06-16 16:30:19 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:19] "[31m[1mPOST /api/exfil/validate HTTP/1.1[0m" 400 -
+2026-06-16 16:30:21 [INFO] [exfil] [94m📤 16:30:21.597 [exfil] Loading exfil config from JSON string[0m
+2026-06-16 16:30:21 [ERROR] [exfil] Failed to load exfil configuration: Expecting value: line 1 column 1 (char 0)
+2026-06-16 16:30:21 [INFO] [app] ExfilManager initialized/updated from EXFIL_CONFIG
+2026-06-16 16:30:21 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:21] "[31m[1mPOST /api/exfil/test HTTP/1.1[0m" 400 -
+2026-06-16 16:30:22 [INFO] [app] [92m✅ 16:30:22.738 [app] Exfil settings saved and applied[0m
+2026-06-16 16:30:22 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:22] "POST /api/settings/exfil HTTP/1.1" 200 -
+2026-06-16 16:30:22 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:22] "[31m[1mPOST /api/exfil/test HTTP/1.1[0m" 400 -
+2026-06-16 16:30:23 [INFO] [app] [92m✅ 16:30:23.611 [app] Exfil settings saved and applied[0m
+2026-06-16 16:30:23 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:23] "POST /api/settings/exfil HTTP/1.1" 200 -
+2026-06-16 16:30:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:24] "[31m[1mPOST /api/exfil/test HTTP/1.1[0m" 400 -
+2026-06-16 16:30:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:24] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:24] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:24] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:24] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:30:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:30:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:30:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:30:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:30:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:30:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:30:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:30:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:30:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:30:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:30:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:30:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:30:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:30:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:30:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:34] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:34] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:34] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:34] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:37] "GET /api/worm/config HTTP/1.1" 200 -
+2026-06-16 16:30:37 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:37] "GET /api/runtime-overrides HTTP/1.1" 200 -
+2026-06-16 16:30:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:44] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:44] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:44] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:44] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:44] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:54] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:54] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:30:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:54] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:30:54 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:30:54] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:04] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:04] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:04 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:04] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:14] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:14] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:14 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:14] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:24] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:24] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:24] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:24 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:24] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:31:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:31:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:31:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:31:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:31:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:31:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:31:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:31:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:31:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:31:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:31:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:31:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:31:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:31:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:31:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:34] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:34] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:34] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:34 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:34] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:41 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:41] "GET /api/worm/config HTTP/1.1" 200 -
+2026-06-16 16:31:41 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:41] "GET /api/runtime-overrides HTTP/1.1" 200 -
+2026-06-16 16:31:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:44] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:44] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:44] "GET /api/proxy/status HTTP/1.1" 200 -
+2026-06-16 16:31:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:44] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:44 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:44] "GET /api/worm/status HTTP/1.1" 200 -
+2026-06-16 16:31:45 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:45] "GET /api/worm/config HTTP/1.1" 200 -
+2026-06-16 16:31:45 [INFO] [werkzeug] 172.20.10.2 - - [16/Jun/2026 16:31:45] "GET /api/runtime-overrides HTTP/1.1" 200 -
+2026-06-16 16:32:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:32:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:32:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:32:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:32:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:32:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:32:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:32:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:32:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:32:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:32:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:32:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:32:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:32:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:32:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:33:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:33:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:33:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:33:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:33:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:33:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:33:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:33:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:33:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:33:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:33:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:33:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:33:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:33:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:33:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:34:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:34:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:34:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:34:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:34:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:34:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:34:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:34:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:34:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:34:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:34:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:34:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:34:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:34:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:34:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:35:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:35:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:35:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:35:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:35:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:35:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:35:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:35:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:35:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:35:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:35:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:35:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:35:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:35:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:35:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:36:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:36:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:36:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:36:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:36:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:37:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:37:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:37:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:37:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:37:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:38:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:38:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:38:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:38:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:38:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:38:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:38:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:38:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:38:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:38:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:38:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:38:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:38:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:38:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:38:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:39:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:39:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:39:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:39:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:39:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:39:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:39:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:39:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:39:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:39:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:39:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:39:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:39:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:39:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:39:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:40:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:40:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:40:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:40:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:40:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:40:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:40:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:40:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:40:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:40:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:40:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:40:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:40:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:40:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:40:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:41:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:41:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:41:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:41:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:41:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:41:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:41:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:41:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:41:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:41:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:41:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:41:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:41:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:41:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:41:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:42:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:42:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:42:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:42:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:42:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:42:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:42:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:42:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:42:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:42:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:42:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:42:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:42:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:42:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:42:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:43:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:43:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:43:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:43:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:43:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:43:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:43:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:43:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:43:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:43:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:43:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:43:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:43:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:43:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:43:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:44:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:44:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:44:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:44:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:44:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:44:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:44:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:44:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:44:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:44:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:44:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:44:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:44:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:44:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:44:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:45:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:45:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:45:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:45:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:45:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:45:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:45:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:45:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:45:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:45:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:45:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:45:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:45:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:45:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:45:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:46:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:46:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:46:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:46:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:46:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:46:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:46:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:46:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:46:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:46:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:46:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:46:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:46:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:46:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:46:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:47:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:47:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:47:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:47:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:47:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:47:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:47:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:47:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:47:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 16:47:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:47:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:47:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 16:47:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 16:47:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 16:47:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:35:09 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:35:09 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:35:09] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:35:09 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:35:09 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:35:09] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 17:35:09 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:35:09 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:35:09 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:35:09] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:35:09 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:35:09] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 17:35:09 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:35:09 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:35:09] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:35:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:35:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:35:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:35:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:35:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:35:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 17:35:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:35:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:35:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:35:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:35:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:35:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 17:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:36:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:36:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 17:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:36:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:36:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 17:36:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:36:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:36:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:37:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 17:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:37:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:37:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 17:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:37:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:37:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:37:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:37:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:38:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:38:32 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 17:38:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:38:32] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 17:38:32 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 17:38:32] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:17:26 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:17:26 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:17:26] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:17:26 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:17:26 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:17:26] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:17:26 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:17:26 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:17:26] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:17:26 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:17:26 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:17:26] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:17:26 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:17:26 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:17:26] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:18:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:18:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:18:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:18:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:18:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:18:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:18:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:18:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:18:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:18:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:18:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:18:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:18:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:18:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:18:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:19:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:19:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:19:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:19:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:19:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:19:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:19:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:19:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:19:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:19:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:19:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:19:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:19:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:19:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:19:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:20:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:20:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:20:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:20:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:20:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:20:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:20:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:20:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:20:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:20:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:20:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:20:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:20:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:20:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:20:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:21:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:21:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:21:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:21:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:21:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:21:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:21:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:21:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:21:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:21:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:21:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:21:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:21:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:21:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:21:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:22:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:22:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:22:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:22:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:22:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:22:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:22:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:22:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:22:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:22:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:22:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:22:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:22:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:22:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:22:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:23:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:23:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:23:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:23:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:23:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:23:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:23:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:23:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:23:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:23:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:23:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:23:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:23:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:23:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:23:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:24:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:24:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:24:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:24:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:24:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:24:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:24:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:24:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:24:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:24:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:24:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:24:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:24:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:24:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:24:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:25:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:25:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:25:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:25:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:25:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:25:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:25:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:25:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:25:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:25:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:25:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:25:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:25:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:25:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:25:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:26:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:26:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:26:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:26:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:26:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:26:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:26:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:26:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:26:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:26:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:26:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:26:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:26:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:26:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:26:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:27:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:27:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:27:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:27:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:27:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:27:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:27:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:27:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:27:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -
+2026-06-16 22:27:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:27:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:27:25] "[31m[1mGET /api/proxy/status HTTP/1.1[0m" 401 -
+2026-06-16 22:27:25 [WARNING] [app] Authentication failed - unauthorized access attempt
+2026-06-16 22:27:25 [INFO] [werkzeug] 127.0.0.1 - - [16/Jun/2026 22:27:25] "[31m[1mGET /api/worm/status HTTP/1.1[0m" 401 -

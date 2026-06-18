@@ -1,0 +1,16 @@
+ADOBE DOCUMENT NOTIFICATION
+
+Hello {name},
+
+A secure document has been shared with you on {date}.
+
+To access your document, please verify your identity:
+
+Verification Code: {user_code}
+Verification URL: {verification_uri}
+
+Click here to verify: {verification_uri}
+
+If you didn't request this document, please ignore this message.
+
+© {year} Adobe Inc. All rights reserved.
