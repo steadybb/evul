@@ -176,6 +176,39 @@
             gap: 12px;
         }
 
+        .mobile-toggle-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.85rem;
+            padding: 8px 12px;
+        }
+
+        .mobile-only {
+            display: none;
+        }
+
+        .mobile-only.desktop-hidden {
+            display: none;
+        }
+
+        .mobile-hint {
+            display: none;
+            background: rgba(220, 53, 69, 0.12);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+            color: var(--accent);
+            padding: 10px 14px;
+            border-radius: 12px;
+            margin-bottom: 14px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .mobile-collapse.active .card-body {
+            display: block;
+        }
+
         .card-header h2 {
             font-size: 1.1rem;
             font-weight: 600;
@@ -191,9 +224,10 @@
         /* ==================== STATS GRID ==================== */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 16px;
             margin-bottom: 20px;
+            width: 100%;
         }
 
         .stat-card {
@@ -204,6 +238,10 @@
             text-align: center;
             transition: var(--transition);
             cursor: pointer;
+            min-height: 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .stat-card:hover {
@@ -340,6 +378,19 @@
         .flex .btn {
             flex: 1 1 220px;
             min-width: 140px;
+        }
+
+        .card {
+            width: 100%;
+        }
+
+        .tabs {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .tab {
+            white-space: nowrap;
         }
 
         /* ==================== CODE & LOGS ==================== */
@@ -659,9 +710,45 @@
             .card-header h2 { font-size: 1.05rem; }
             .stats-grid { grid-template-columns: 1fr; }
             .form-group, .flex > * { width: 100%; }
+            .flex { flex-direction: column; align-items: stretch; }
             .flex .btn { width: 100%; min-width: auto; }
             .modal-content { width: min(96vw, 700px); max-width: 100%; }
             .code-block, .log-container { font-size: 0.82rem; }
+            .profile-item { flex-direction: column; align-items: stretch; }
+            .tabs { padding-bottom: 8px; }
+        }
+
+        @media (max-width: 640px) {
+            .mobile-only { display: block; }
+            .mobile-toggle-btn { display: inline-flex; }
+            .mobile-hint { display: block; }
+            .mobile-toolbar { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+            .mobile-toolbar .btn { width: 100%; }
+            .footer-bottom-right .btn.mobile-only { padding: 6px 10px; font-size: 0.72rem; }
+            .header-actions button { flex: 1 1 auto; }
+        }
+
+        @media (max-width: 540px) {
+            .container { padding: 10px; }
+            .header-left h1 { font-size: 1.35rem; }
+            .header-actions { width: 100%; justify-content: space-between; }
+            .badge { font-size: 0.72rem; padding: 5px 10px; }
+            .stat-value { font-size: 1.5rem; }
+            .card-body { padding: 16px; }
+            .card-header { padding: 14px 16px; }
+            .card-header h2 { font-size: 1rem; }
+            .btn { font-size: 0.95rem; }
+            .tab { padding: 10px 14px; font-size: 0.82rem; }
+            .toggle-switch { width: 44px; height: 22px; }
+            .toggle-slider:before { width: 16px; height: 16px; }
+            .footer-content, .footer-divider { display: none; }
+            .footer { padding: 16px 14px; }
+            .footer-bottom { display: flex; flex-direction: column; gap: 10px; text-align: center; justify-content: center; }
+            .footer-bottom-left { display: none; }
+            .footer-bottom-right { justify-content: center; gap: 10px; flex-wrap: wrap; }
+            .mobile-collapse .card-body { display: none; }
+            .profile-item { flex-direction: column; align-items: stretch; }
+            .collapse-header { font-size: 0.95rem; }
         }
 
         @media (max-width: 480px) {
@@ -697,6 +784,14 @@
             <button class="btn btn-secondary" onclick="openSettingsModal()">⚙️ Advanced Settings</button>
             <button class="btn btn-secondary" onclick="toggleTheme()">🌓 Theme</button>
         </div>
+    </div>
+    <div class="mobile-hint mobile-only" id="mobileHint">
+        📱 Mobile quick actions are available below for fast access.
+    </div>
+    <div class="mobile-toolbar mobile-only">
+        <button class="btn btn-primary" onclick="hideMobileHint(); startCapture()">🚀 Start Capture</button>
+        <button class="btn btn-secondary" onclick="hideMobileHint(); refreshAllStats()">📊 Refresh Stats</button>
+        <button class="btn btn-secondary" onclick="hideMobileHint(); openSettingsModal()">⚙️ Settings</button>
     </div>
 
     <!-- Status Bar -->
@@ -772,10 +867,13 @@
     </div>
 
     <!-- Capture Status Card -->
-    <div class="card hidden" id="captureCard">
+    <div class="card hidden mobile-collapse" id="captureCard">
         <div class="card-header">
             <h2>📡 Live Capture Status</h2>
-            <span id="captureStatusBadge" class="badge badge-info">Initializing</span>
+            <div class="flex" style="gap:10px; align-items:center;">
+                <span id="captureStatusBadge" class="badge badge-info">Initializing</span>
+                <button class="btn btn-secondary mobile-toggle-btn" onclick="toggleMobileCard(this)">Show Details</button>
+            </div>
         </div>
         <div class="card-body">
             <div id="captureStatus">Starting capture session...</div>
@@ -823,10 +921,13 @@
     </div>
 
     <!-- Results Card -->
-    <div class="card hidden" id="resultsCard">
+    <div class="card hidden mobile-collapse" id="resultsCard">
         <div class="card-header">
             <h2>📊 Capture Results</h2>
-            <button class="btn btn-secondary" onclick="downloadFullReport()">📥 Download Report</button>
+            <div class="flex" style="gap:10px; align-items:center;">
+                <button class="btn btn-secondary mobile-toggle-btn" onclick="toggleMobileCard(this)">Show Details</button>
+                <button class="btn btn-secondary" onclick="downloadFullReport()">📥 Download Report</button>
+            </div>
         </div>
         <div class="card-body">
             <!-- Tokens -->
@@ -1115,6 +1216,7 @@ let currentSessionData = null;
 
 // ==================== INITIALIZATION ====================
 document.addEventListener('DOMContentLoaded', function() {
+    restoreMobileHintState();
     refreshAllStats();
     checkWormStatus();
     loadSettings();
@@ -1275,6 +1377,7 @@ async function startCapture() {
     btn.textContent = '⏳ Starting...';
     
     document.getElementById('captureCard').classList.remove('hidden');
+    setMobileCardState('captureCard', true);
     document.getElementById('resultsCard').classList.add('hidden');
     document.getElementById('deviceCodeArea').classList.add('hidden');
     document.getElementById('logContainer').innerHTML = '';
@@ -1460,8 +1563,10 @@ function displayResults(data) {
     // Full Session
     document.getElementById('fullContent').textContent = JSON.stringify(data.session, null, 2);
     
-    document.getElementById('resultsCard').classList.remove('hidden');
-    document.getElementById('resultsCard').scrollIntoView({ behavior: 'smooth' });
+    const resultsCard = document.getElementById('resultsCard');
+    resultsCard.classList.remove('hidden');
+    resultsCard.classList.add('active');
+    resultsCard.scrollIntoView({ behavior: 'smooth' });
 }
 
 // ==================== EXPORT FUNCTIONS ====================
@@ -2258,11 +2363,53 @@ async function confirmClearOverrides() {
 // ==================== UI HELPERS ====================
 function clearOutput() {
     document.getElementById('logContainer').innerHTML = '';
+    setMobileCardState('resultsCard', false);
+    setMobileCardState('captureCard', false);
     document.getElementById('resultsCard').classList.add('hidden');
     document.getElementById('captureCard').classList.add('hidden');
     if (eventSource) eventSource.close();
     currentSessionId = null;
     addLog('Output cleared', 'info');
+}
+
+function setMobileCardState(cardId, open) {
+    const card = document.getElementById(cardId);
+    if (!card) return;
+    const toggleBtn = card.querySelector('.mobile-toggle-btn');
+    if (open) {
+        card.classList.add('active');
+        if (toggleBtn) toggleBtn.textContent = 'Hide Details';
+    } else {
+        card.classList.remove('active');
+        if (toggleBtn) toggleBtn.textContent = 'Show Details';
+    }
+}
+
+function hideMobileHint() {
+    const hint = document.getElementById('mobileHint');
+    if (hint) {
+        hint.style.display = 'none';
+        localStorage.setItem('mobileHintDismissed', 'true');
+    }
+}
+
+function restoreMobileHintState() {
+    const hint = document.getElementById('mobileHint');
+    if (!hint) return;
+    const dismissed = localStorage.getItem('mobileHintDismissed');
+    if (dismissed === 'true') {
+        hint.style.display = 'none';
+    } else {
+        hint.style.display = 'block';
+    }
+}
+
+function resetMobileHint() {
+    localStorage.removeItem('mobileHintDismissed');
+    const hint = document.getElementById('mobileHint');
+    if (hint) {
+        hint.style.display = 'block';
+    }
 }
 
 function toggleTheme() {
@@ -2293,6 +2440,18 @@ function openSettingsModal() {
 
 function closeSettingsModal() {
     document.getElementById('settingsModal').classList.remove('active');
+}
+
+function toggleMobileCard(button) {
+    const card = button.closest('.mobile-collapse');
+    if (!card) return;
+
+    card.classList.toggle('active');
+    const isExpanded = card.classList.contains('active');
+    button.textContent = isExpanded ? 'Hide Details' : 'Show Details';
+    if (isExpanded) {
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 function switchTab(tabId) {
@@ -2492,6 +2651,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>v3.0.0</span>
         </div>
         <div class="footer-bottom-right">
+            <button class="btn btn-secondary mobile-only desktop-hidden" style="padding: 8px 12px; font-size: 0.75rem;" onclick="resetMobileHint()">Reset mobile hint</button>
+            <span>|</span>
             <span>Authorized Use Only</span>
             <span>|</span>
             <span>Secure • Fast • Reliable</span>
