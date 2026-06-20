@@ -46,6 +46,7 @@
 
         /* ==================== LAYOUT ==================== */
         .container {
+            width: 100%;
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
@@ -317,16 +318,12 @@
         }
 
         /* ==================== GRID ==================== */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-        }
-
+        .grid-2,
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 16px;
+            width: 100%;
         }
 
         .flex {
@@ -334,6 +331,15 @@
             gap: 12px;
             align-items: center;
             flex-wrap: wrap;
+        }
+
+        .flex > * {
+            min-width: 0;
+        }
+
+        .flex .btn {
+            flex: 1 1 220px;
+            min-width: 140px;
         }
 
         /* ==================== CODE & LOGS ==================== */
@@ -635,13 +641,40 @@
         }
 
         /* ==================== RESPONSIVE ==================== */
-        @media (max-width: 768px) {
-            .container { padding: 12px; }
+        @media (max-width: 1024px) {
+            .container { padding: 16px; }
             .grid-2, .grid-3 { grid-template-columns: 1fr; }
-            .header { flex-direction: column; align-items: flex-start; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: 1fr; }
             .footer-content { grid-template-columns: 1fr; gap: 20px; }
             .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            body { background-attachment: scroll; }
+            .container { padding: 12px; }
+            .header { flex-direction: column; align-items: flex-start; }
+            .header-actions { width: 100%; justify-content: flex-start; }
+            .header-left h1 { font-size: 1.5rem; }
+            .card-header { flex-direction: column; align-items: stretch; gap: 12px; }
+            .card-header h2 { font-size: 1.05rem; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .form-group, .flex > * { width: 100%; }
+            .flex .btn { width: 100%; min-width: auto; }
+            .modal-content { width: min(96vw, 700px); max-width: 100%; }
+            .code-block, .log-container { font-size: 0.82rem; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 10px; }
+            .header-left h1 { font-size: 1.35rem; }
+            .badge { font-size: 0.7rem; padding: 5px 10px; }
+            .stat-value { font-size: 1.6rem; }
+            .card { border-radius: 14px; }
+            .card-body { padding: 16px; }
+            .card-header { padding: 14px 16px; }
+            .card-header h2 { font-size: 1rem; }
+            .btn { font-size: 0.95rem; }
+            .tab { padding: 10px 14px; font-size: 0.8rem; }
         }
 
         /* ==================== SCROLLBAR ==================== */
